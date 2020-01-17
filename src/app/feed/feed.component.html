@@ -3,8 +3,8 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <img src="" alt="">
-                    <div class="h5">@GreenTeam</div>
+                    <img class="imagemPerfil" src="../../assets/images/PCD2.png" alt="">
+                    <div class="h5 mt-4">{{ usuario.nome }}</div>
                     <div class="h7">Desenvolvedores Java Full-Stack</div>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -162,9 +162,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Buscar Publicação</h5>
                     <p class="card-text">Digite o Id para retornar uma publicação:</p>
-                    <input type="text" placeholder="Digite o ID" [(ngModel)]="idBusca">
+                    <input type="text" class="form-control" placeholder="Digite o ID" [(ngModel)]="idBusca">
                     <span *ngIf='_msgErro'>{{_msgErro}}</span>
-                    <br>
                     <br>
                     <button (click)="pesquisar();" class="btn btn-primary">Buscar</button>
                 </div>

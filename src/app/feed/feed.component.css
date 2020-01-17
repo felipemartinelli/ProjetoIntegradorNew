@@ -3,7 +3,14 @@ img{
     height: 80px;
 }
 
+
+
 #card{
     display: flex;
     justify-content: right;
+}
+
+.imagemPerfil{
+    width: 250px;
+    height: 250px;
 }

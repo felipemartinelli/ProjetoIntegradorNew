@@ -1,13 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Usuario } from '../model/Usuario';
 import { UsuarioService } from '../service/usuario.service';
+import { Router } from '@angular/router';
+import { Globals } from '../model/Globals';
+import * as $ from 'jquery';
+
+//Para funcionar o JQuery é preciso instalar as bibiliotecas a seguir:
+//npm install jquery --save
+//npm install @types/jquery
+//e import * as $ from 'jquery'; no projeto.
+
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  providers: [ Globals ]
 })
 export class NavbarComponent implements OnInit {
+
+// @ViewChild('btnClose', {static: false}) btnClose : ElementRef 
 
   public usuario: Usuario = new Usuario();
 
@@ -26,7 +38,7 @@ export class NavbarComponent implements OnInit {
   private _msgSenhaFraca: string = null;
   private cont = 0;
 
-  constructor(private srv: UsuarioService) { }
+  constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -146,8 +158,13 @@ export class NavbarComponent implements OnInit {
       this.usuario.senha = this.senhaLogin;
 
       this.srv.recuperaLoginESenha(this.usuario).subscribe(
-        res =>{
+        (res:Usuario) =>{
           alert("E-mail e senha validados com sucesso!");
+          Globals.user = res;
+          this.router.navigate(['feed']);
+          $('#modalExemplo').hide();
+          $('.modal-backdrop').hide();
+
         },
         err=>{
           alert("Usuário não cadastrado no sistema");
