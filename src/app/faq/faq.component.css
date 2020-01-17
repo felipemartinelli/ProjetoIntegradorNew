@@ -1,0 +1,63 @@
+#perguntas{
+    display:inline-block ;
+    justify-content: center ;
+    margin-top: 5%;
+}
+#fotoperguntas{
+   justify-content: center;
+}
+#foto{
+    height: 450px;
+    width: 650px;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+
+}
+.btn{
+margin-bottom: 15px;
+}
+.card{
+    height: 200px ;
+    widows: 500px ;     
+}
+h1{
+    display: flex;
+    text-align: center;
+}
+input{
+    height: 37px;
+}
+#faça{
+    margin: 2%;
+    
+    justify-content: center;
+}
+#popular{
+    display: flex;
+    justify-content: center;
+}
+#inputzao{
+    height: 200px;
+}
+#btns{
+    display: flex;
+    justify-content: right;
+}
+
+.titulo2{
+    color: black;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.nav-link{
+    color: black;
+}
+
+#cadastro{
+    margin-left: 50%;
+}

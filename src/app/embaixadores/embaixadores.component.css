@@ -1,0 +1,76 @@
+.video{
+    height: 320px;
+    width: 530px;
+    text-align: center;
+}
+#embaixadores{
+    margin-top:8%;
+    margin-block-end: 9%;
+}
+.footer {
+    display: flex;
+    justify-content: center ;
+}
+
+.social li a {
+    /*tamanho da imagem*/
+    height: 32px;
+    width: 32px;
+    /*image replamecent (substituição por imagem)*/
+    display: block;
+    text-indent: -9999px;
+  
+}
+
+.social a[href*="facebook.com"] {
+    background-image: url(/assets/images/facebook.png);
+}
+
+.social a[href*="twitter.com"] {
+    background-image: url(/assets/images/twitter.png);
+}
+
+.social a[href*="instagram.com"] {
+    background-image: url(/assets/images/instagram.png);
+}
+
+ul {
+    list-style: none
+    }
+li{
+    display: inline
+}
+
+.social li {
+    float: left;
+    margin-left: 25px;
+}
+.kl{
+    text-align: center;
+}
+.social{
+    margin-left: 415px;
+}
+
+.titulo{
+    color: black;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+ul {
+    list-style: none;
+    }
+
+li{
+    display: inline
+}
+
+.nav-link{
+    color: black;
+}
+
+#cadastro{
+    margin-left: 50%;
+}

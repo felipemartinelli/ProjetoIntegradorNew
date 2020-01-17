@@ -1,15 +1,14 @@
-*{
-    margin: 0%;
-    padding: 0%;
-
-}
 h1{
     color: black;
-    
-    padding-top: 130px;
-    
+    padding-top: 140px;
     font-size: 48px;
     
+}
+h2{
+ color: black;
+ font-size: 40px;
+ margin-left: 60%;
+ 
 }
 #simbolo{
     position: absolute; 
@@ -39,6 +38,7 @@ h1{
     justify-content: center;
     margin-top: 2%;
     padding-right: 77px;
+    padding-left: 8%;
   
 }
 .nav-link{
@@ -52,6 +52,11 @@ body{
     background: #000;
     padding-top: 10px;
   } 
+.titulo{
+    text-decoration: none;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+}
 
 
   

@@ -8,6 +8,8 @@ import { FeedComponent } from "./feed/feed.component";
 import { BuscaComponent } from "./busca/busca.component";
 import { ListagemComponent } from './listagem/listagem.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { EmbaixadoresComponent } from './embaixadores/embaixadores.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: "full"},
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'feed', component: FeedComponent},
   { path: 'busca', component: BuscaComponent },
   { path: 'listagem', component: ListagemComponent },
-  { path: 'detalhe/:id', component: DetalheComponent}
+  { path: 'detalhe/:id', component: DetalheComponent},
+  { path: 'embaixadores', component: EmbaixadoresComponent},
+  { path: 'faq', component: FaqComponent}
 ];
 
 @NgModule({

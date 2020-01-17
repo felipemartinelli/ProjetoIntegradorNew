@@ -23,6 +23,8 @@ export class FeedComponent implements OnInit {
 
   constructor(private postService: PostService, private router: Router) { }
 
+   
+
   ngOnInit() {
     this.acharTodos();
     this.usuario = Globals.user;

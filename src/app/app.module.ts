@@ -14,6 +14,8 @@ import { FeedComponent } from './feed/feed.component';
 import { BuscaComponent } from './busca/busca.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { EmbaixadoresComponent } from './embaixadores/embaixadores.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { DetalheComponent } from './detalhe/detalhe.component';
     FeedComponent,
     BuscaComponent,
     ListagemComponent,
-    DetalheComponent
+    DetalheComponent,
+    EmbaixadoresComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

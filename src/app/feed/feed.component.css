@@ -14,3 +14,11 @@ img{
     width: 250px;
     height: 250px;
 }
+
+
+.titulo{
+    color: black;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
