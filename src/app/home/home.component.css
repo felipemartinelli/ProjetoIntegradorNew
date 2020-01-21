@@ -1,20 +1,23 @@
 h1{
     color: black;
-    padding-top: 140px;
+    
     font-size: 48px;
     
 }
-h2{
- color: black;
- font-size: 40px;
- margin-left: 60%;
- 
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+    
+
 }
 #simbolo{
-    position: absolute; 
-    left: 850px; /* posiciona a 90px para a esquerda */ 
-    top: 140px; /* posiciona a 70px para baixo */
-    width: 220px;
+
+    /*left: 850px;  posiciona a 90px para a esquerda 
+    top: 140px; posiciona a 70px para baixo */
+    width: 190px;
     right: 220px;
 }
 .itens{
@@ -24,14 +27,14 @@ h2{
     left: 2%;
 }
 .itenNav{
-    margin-left: 6%;
+    margin-left: 40%;
 }
 #foto{
     display: flex;
     justify-content: center;
 }
-.texto{
-    margin-left: 10px;
+#texto{
+    margin-left: 5%;
 }
 #navbaixo{
     display: flex;
@@ -56,6 +59,10 @@ body{
     text-decoration: none;
     color: black;
     font-family: 'Quicksand', sans-serif;
+}
+
+.fundo{
+    background: #007EF9;
 }
 
 
