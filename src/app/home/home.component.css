@@ -1,3 +1,5 @@
+
+
 h1{
     color: black;
     
@@ -13,11 +15,21 @@ h1{
     
 
 }
+
+#sessao1{
+    margin-top: 120px;
+}
+
+.fundo{
+    margin-top: 220px;
+}
+
 #simbolo{
 
-    /*left: 850px;  posiciona a 90px para a esquerda 
-    top: 140px; posiciona a 70px para baixo */
-    width: 190px;
+    margin-top: 0px;
+    left: 850px;  
+    top: 140px; 
+    width: 420px;
     right: 220px;
 }
 .itens{
@@ -45,12 +57,13 @@ h1{
   
 }
 .nav-link{
-    
+
     margin:10px;
     color: rgb(92, 92, 92);
     border: transparent;
     
 }
+
 body{
     background: #000;
     padding-top: 10px;
@@ -63,6 +76,9 @@ body{
 
 .fundo{
     background: #007EF9;
+}
+.tamanho{
+    height: 100px;
 }
 
 
