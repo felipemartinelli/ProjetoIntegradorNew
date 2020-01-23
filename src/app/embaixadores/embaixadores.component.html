@@ -1,65 +1,161 @@
-<div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-transparent ">
-    
-                    <a [routerLink]="'/home'" class="titulo"><strong><h2> Click<strong>In</strong> </h2> </strong></a>
-    
-                <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos </a>    
-                <a class="nav-link" [routerLink]="'/contato'">Contato</a>             
-                <a class="nav-link" [routerLink]="'/faq'">FAQs</a>
-                
-                
-                <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal"
-                    data-target="#modalCadastro">Cadastre-se</a>
-                <button type="button" data-toggle="modal" data-target="#modalExemplo"
-                    class="btn btn-outline-dark">Entrar</button>
-            </nav>
-    
-        </div>
-    
-    
-    </div>
+<!-- NAVBAR -->
 
+<div class="col-md-7">
+    <nav class="navbar navbar-expand-lg navbar-transparent ">
+
+        <a [routerLink]="'/home'" class="titulo"><strong>
+                <img src="/assets/images/logonew.png" id="logo">
+            </strong></a>
+        <a class="navbar-brand" href="#"></a>
+
+        <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal"
+            data-target="#modalCadastro">Cadastre-se</a>
+        <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-dark">Entrar</button>
+
+    </nav>
+</div>
+
+<!-- MODAL LOGIN -->
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="card-title text-center">
+                    Entrar
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btnfecharLogin">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail"
+                            required autofocus [(ngModel)]="emailLogin" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Senha</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                            [(ngModel)]="senhaLogin" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3 mt-3">
+                        <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <br>
+                        <a href="#">Esqueceu a senha? Clique aqui</a>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                        (click)="validaLogin();">Entrar</button>
+                    <hr class="my-4">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- MODAL CADASTRO -->
+
+<div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="card-title text-center">
+                    Cadastre-se
+                </h5>
+                <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="inputNome">Nome Completo</label>
+                        <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required
+                            autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                    </div>
+                    <div class="form-label-group mt-3">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail" required autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+                    </div>
+                    <div class="form-label-group mt-3">
+                        <label for="inputTelefone">Telefone</label>
+                        <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
+                            autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+                    </div>
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Senha</label>
+                        <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha"
+                            [ngModelOptions]="{standalone: true}"
+                            placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress)="forcaSenha();"
+                            (keyup)="forcaSenha();" required data-toggle="tooltip"
+                            title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+
+                        <span id="spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+                        <span id="spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
+                    </div>
+
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Confirme a senha</label>
+                        <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida"
+                            [ngModelOptions]="{standalone: true}" placeholder="Repita a sua senha" required>
+                        <span id="spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+
+                    </div>
+
+
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4"
+                        (click)="valida();">Cadastrar</button>
+                    <hr class="my-4">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TEXTO DA PÁGINA -->
 
 <div class="container">
-        <div class="row" id= "embaixadores">
-        <div class="col-md-6" >
-                <div class="card-body" id="texto">
-                  <h4>Nossas inspirações</h4> <br>
-                  <p>Conversamos com a Mariana Neres, Cássia Regina, Thiago Cardoso, Thiago Demiquele e João Marinho para viabilizar a criação e funcionalidade do nosso projeto. Essa troca foi essencial para a formação e planejamento do Clickin. </p>
-                <p> Conhecer a realidade vivenciada pelos PCD's no processo de inclusão no mercado de trabalho foi nossa primeira missão para conseguir formar a Rede social com funcionalidade.  </p>
-                <p> Nosso agradecimento especial à Mariana, Cassia, Thiago, João e os demais amigos e professores que apoiaram a nossa ideia.</p>
-                </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-body" id="texto">
+
+                <h4>Nossas inspirações</h4> <br>
+                <p>Conversamos com a Mariana Neres, Cássia Regina, Thiago Cardoso, Thiago Demiquele e João Marinho para
+                    viabilizar a criação e funcionalidade do nosso projeto. Essa troca foi essencial para a formação e
+                    planejamento do Clickin. </p>
+                <p> Conhecer a realidade vivenciada pelos PCD's no processo de inclusão no mercado de trabalho foi nossa
+                    primeira missão para conseguir formar a Rede social com funcionalidade. </p>
+                <p> Nosso agradecimento especial aos entrevistados e aos amigos e professores que apoiaram a nossa ideia.</p>
+
+            </div>
         </div>
-              
+
         <div class="coll-md-6">
-        <div class="embed-responsive embed-responsive-16by9 video">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-          </div>
+            <div class="embed-responsive embed-responsive-16by9 video">
+                <iframe class="embed-responsive-item" src="https://youtu.be/jnGOfMVJrVY"
+                    allowfullscreen></iframe>
+            </div>
         </div>
-        
-        </div>
-        </div>
-        <hr>
-            <!--<footer class="footer">-->
-                    <div class="container mb-3">
-                            <div class="row">
-                                <div class="col-md-12 kl">
-                                    <div id="textorodape" class="navbar-text">
-                                        <strong>ClickIn&reg;</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row ">
-            
-                                <div class="col-md-12 ">
-                                    <ul class="social ">
-                                        <li><a href="http://facebook.com/">Facebook</a></li>
-                                        <li><a href="https://twitter.com/">Twitter</a></li>
-                                        <li><a href="http://instagram.com/">Instagram</a></li>
-                                    </ul>
-            
-                                </div>
-                            </div>
-                        </div>
-                        <!--</footer>-->
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="col">
+    <hr>
+    <div id="textorodape" class="navbar-text">
+        <strong>ClickIn&reg;</strong> 2020
+    </div>
+</div>

@@ -1,167 +1,189 @@
-<div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-transparent ">
-    
-                    <a [routerLink]="'/home'" class="titulo"><strong><h2> Click<strong>In</strong> </h2> </strong></a>
-    
-                <a class="nav-link" [routerLink]="'/contato'">Contato</a>
-                <a class="nav-link" [routerLink]="'/embaixadores'">Embaixadores </a>
-                <a class="nav-link" [routerLink]="'/faq'">FAQs</a>
-                
-                
-                <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal"
-                    data-target="#modalCadastro">Cadastre-se</a>
-                <button type="button" data-toggle="modal" data-target="#modalExemplo"
-                    class="btn btn-outline-dark">Entrar</button>
-            </nav>
-    
-        </div>
-    
-    
-    </div>
-        <div class="col-md-2">
-      
-        </div>
-      
-        <div class="container-fluid">
-            <div class= "row mt-5">
-                <div class="col-md-2"></div>
-                <div class="col-md-8" id="margem">
-                <p>O <strong>ClickIn</strong> tem como foco estimular a inclusão de PDC’s no mercado de trabalho e o acesso a informações e atualidades do meio. Viabilizada a conexão entre empregadores e profissionais PCDs da-se na busca por mapear e entender quais são as necessidades e requisitos para incluir essa população nas empresas. A partir de entrevistas e pesquisas, foram coletadas histórias, impressões, dados sobre esse público. Num segundo momento, como parte do projeto, vídeos foram gravados para dar visibilidade a história dos nossos embaixadores que exemplificam os desafios dos profissionais a ingressar no mercado. O objetivo do projeto é, de um lado, mostrar como à falta de inclusão e representatividade, e também estimular referências positivas.
-                    </p>
+<!-- NAVBAR -->
+
+<div class="col-md-7">
+    <nav class="navbar navbar-expand-lg navbar-transparent ">
+
+        <a [routerLink]="'/home'" class="titulo"><strong>
+                <img src="/assets/images/logonew.png" id="logo">
+            </strong></a>
+        <a class="navbar-brand" href="#"></a>
+
+        <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal"
+            data-target="#modalCadastro">Cadastre-se</a>
+        <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-dark">Entrar</button>
+
+    </nav>
+</div>
+
+<!-- MODAL LOGIN -->
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="card-title text-center">
+                    Entrar
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btnfecharLogin">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail"
+                            required autofocus [(ngModel)]="emailLogin" [ngModelOptions]="{standalone: true}">
                     </div>
-                <div class="col-md-2"></div>    
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Senha</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                            [(ngModel)]="senhaLogin" [ngModelOptions]="{standalone: true}" required>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-3 mt-3">
+                        <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <br>
+                        <a href="#">Esqueceu a senha? Clique aqui</a>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                        (click)="validaLogin();">Entrar</button>
+                    <hr class="my-4">
+                </form>
+            </div>
+
+        </div>
     </div>
 </div>
 
-    <div class="container-fluid">
-        <div class="row mt-4" id="conteudo">
-            
-            <div class="col-md-3 d-flex justify-content-end p-0 mb-3">
-                <img src="assets/images/camilav2.jpg" class="rounded-circle tamanho-img" alt="">
-            </div>
-            <div class="col-md-7" id="margem">
-                <p>“Minha intenção é protagonizar na área de técnologia para disseminar o
-                        conhecimento a quem tem menos alcance e assim tornar referência como forma de inclusão. ”
-                </p>
-                <p>Camilla Cleane, 26 anos - Líder</p>
-            </div>
+<!-- MODAL CADASTRO -->
 
-        </div>
-        <div class="row" id="conteudo">
-            <div class="col-md-3 d-flex justify-content-end p-0 mb-3">
-                <img src="assets/images/luisv2.jpg" class="rounded-circle tamanho-img" alt="">
+<div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="card-title text-center">
+                    Cadastre-se
+                </h5>
+                <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="col-md-7" id="margem">
-                <p>“Gosto de ajudar quem precisa e acredito muito que unindo técnologia e trabalho em equipe podemos atingir objetivos maiores com mais produtividade.”
-                </p>
-                <p>Luis Witts, 20 anos - Scrum </p>
-            </div>
-
-        </div>
-        <div class="row" id="conteudo">
-            <div class="col-md-3 d-flex justify-content-end p-0 mb-3">
-                <img src="assets/images/leo.jpg" class="rounded-circle tamanho-img" alt="">
-            </div>
-            <div class="col-md-7" id="margem">
-                <p>“Acredito que todos temos direito a equidade de oportunidades. Neste caso vejo que através da
-                        tecnologia podemos levar inclusão e informação de maneira simples e eficaz. ”
-                </p>
-                <p>Leonardo A. Simonetti, 26 anos - Desenvolvedor Front-End</p>
-            </div>
-
-        </div>
-        <div class="row" id="conteudo">
-            <div class="col-md-3 d-flex justify-content-end p-0 mb-3">
-                <img src="assets/images/dani.jpg" class="rounded-circle tamanho-img" alt="">
-            </div>
-            <div class="col-md-7" id="margem">
-                <p>“Acredito na possibilidade de utilizar os avanços tecnológicos, a disseminação do conhecimento e a aplicação das leis de forma igualitária.”
-                </p>
-                <p> Danielle Sacramento, 27 anos - Desenvolvedor Front-End</p>
-            </div>
-
-        </div>
-
-        <div class="row" id="conteudo">
-            <div class="col-md-3 d-flex justify-content-end p-0 mb-3">
-                <img src="assets/images/felipe.jpg" class="rounded-circle tamanho-img" alt="">
-            </div>
-            <div class="col-md-7" id="margem">
-                <p>“Mais de 5 anos de experiência na área de infraestrutura e fanático por novas linguagens e tecnologias.”
-                </p>
-                <p>Felipe Martinelli, 24 anos - Desenvolvedor Back-End</p>
-            </div>
-
-        </div>
-
-
-
-        <div class="row" id="flipcard">
-        <div class="col-md-3">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../../assets/images/missao.png" alt="Avatar" style="width:150px;height:150px;">
+            <div class="modal-body">
+                <form class="form-signin">
+                    <div class="form-label-group">
+                        <label for="inputNome">Nome Completo</label>
+                        <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required
+                            autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
                     </div>
-                    <div class="flip-card-back">
-                        <h1>Missão</h1>
-                        <p>Mudar a realidade social da pessoa com deficiência ao possibilitar sua conexão com possíveis
-                            empregadores e a garantia de seus direitos.</p>
+                    <div class="form-label-group mt-3">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail" required autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../../assets/images/visao.png" alt="Avatar" style="width:150px;height:150px;">
+                    <div class="form-label-group mt-3">
+                        <label for="inputTelefone">Telefone</label>
+                        <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone"
+                            [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
+                            autofocus>
+                        <span id="spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
                     </div>
-                    <div class="flip-card-back" >
-                        <h1>Visão</h1>
-                        <p>Tornar-se referência nacional na inclusão profissional e social de pessoas com deficiência.
-                        </p>
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Senha</label>
+                        <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha"
+                            [ngModelOptions]="{standalone: true}"
+                            placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress)="forcaSenha();"
+                            (keyup)="forcaSenha();" required data-toggle="tooltip"
+                            title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+
+                        <span id="spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+                        <span id="spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="../../assets/images/valores.png" alt="Avatar" style="width:150px;height:150px;">
+
+                    <div class="form-label-group mt-3">
+                        <label for="inputPassword">Confirme a senha</label>
+                        <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida"
+                            [ngModelOptions]="{standalone: true}" placeholder="Repita a sua senha" required>
+                        <span id="spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+
                     </div>
-                    <div class="flip-card-back" id="texto">
-                        <h1>Valores</h1>
-                        <p>Honestidade, respeito, responsabilidade, tolerância e humildade.</p>
-                    </div>
-                </div>
+
+
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4"
+                        (click)="valida();">Cadastrar</button>
+                    <hr class="my-4">
+                </form>
             </div>
         </div>
     </div>
+</div>
+
+<!-- TEXTO SOBRE NÓS -->
 
 
+<h3 class="display-4  p-0 mb-4">Sobre o projeto</h3>
+
+<p class="lead"> O ClickIn é uma rede que tem como foco estimular a inclusão de PCD’s no mercado de trabalho, para
+    facilitar o acesso a informações e atualidades do meio.
+    Viabilizar a conexão entre empregadores e profissionais PCDs da-se na busca por mapear e entender quais são as
+    necessidades e requisitos para incluir essa população nas empresas. A partir de entrevistas e pesquisas, foram
+    coletadas histórias, impressões, dados sobre esse público. Num segundo momento, como parte do projeto, vídeos foram
+    gravados para dar visibilidade a história dos nossos embaixadores que exemplificam os desafios dos profissionais a
+    ingressar no mercado. O objetivo do projeto é, de um lado, mostrar como à falta de inclusão e representatividade, e
+    também estimular referências positivas.</p>
+
+
+
+
+<!-- CARROUSEL NOSSO TIME -->
+
+<h4 class="display-4  p-0 mb-4 ">Nosso Time</h4>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../assets/images/1.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/2.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/3.png" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/4.png" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/5.png" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<!-- FOOTER -->
+
+
+
+<div class="col-md-12">
     <hr>
-    <!--<footer class="footer">-->
-            <div class="container mb-3">
-                    <div class="row">
-                        <div class="col-md-12 kl">
-                            <div id="textorodape" class="navbar-text">
-                                <strong>ClickIn&reg;</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row ">
-    
-                        <div class="col-md-12 ">
-                            <ul class="social ">
-                                <li><a href="http://facebook.com/">Facebook</a></li>
-                                <li><a href="https://twitter.com/">Twitter</a></li>
-                                <li><a href="http://instagram.com/">Instagram</a></li>
-                            </ul>
-    
-                        </div>
-                    </div>
-                </div>
-                <!--</footer>-->
+    <div id="textorodape">
+        <strong>ClickIn&reg;</strong> 2020
+    </div>
+</div>

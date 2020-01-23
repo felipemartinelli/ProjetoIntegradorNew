@@ -1,63 +1,65 @@
-#perguntas{
-    display:inline-block ;
-    justify-content: center ;
-    margin-top: 5%;
-}
-#fotoperguntas{
-   justify-content: center;
-}
-#foto{
-    height: 450px;
-    width: 650px;
-}
-#titulo{
-    display: flex;
-    justify-content: center;
-    height: 50px;
+/* LOGO CLICKIN */
 
-}
-.btn{
-margin-bottom: 15px;
-}
-.card{
-    height: 200px ;
-    widows: 500px ;     
-}
-h1{
-    display: flex;
-    text-align: center;
-}
-input{
-    height: 37px;
-}
-#faça{
-    margin: 2%;
-    
-    justify-content: center;
-}
-#popular{
-    display: flex;
-    justify-content: center;
-}
-#inputzao{
-    height: 200px;
-}
-#btns{
-    display: flex;
-    justify-content: right;
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-.titulo2{
-    color: black;
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-
-}
-
-.nav-link{
-    color: black;
-}
+/* BOTÃO CADASTRAR/ENTRAR */
 
 #cadastro{
+    margin-left: 120%;
+}
+
+/* TITULO */
+
+h4{
+    text-align: center;
+    margin-top: 3%;
+}
+
+/* LISTA DE PERGUNTAS */
+
+#botoesperguntas{
+    margin-left: 30%;
+    margin-top: 1%;
+}
+
+/* RESPOSTAS */
+
+li{
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+/* BOTAO ENVIAR */
+
+#botao{
+    left: 115px;
+}
+
+/* FOOTER */
+
+#textorodape {
+    display: flex;
+    justify-content: center ;
+}
+
+/* TITULO */
+
+h2{
+    text-align: center;
+    color: black;
+}
+
+/* IMAGEM */
+
+#foto{
+    height: 250px;
+    width: 250px;
     margin-left: 50%;
+    margin-top: 5%;
 }

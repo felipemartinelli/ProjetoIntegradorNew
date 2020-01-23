@@ -1,10 +1,9 @@
 /*Início do footer*/
 #rodape{
-    position: fixed;
+    
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #033157;
     color: #b5b5b5;
     margin-top:6.7%;
     padding:2%;

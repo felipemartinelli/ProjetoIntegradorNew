@@ -1,112 +1,35 @@
-.tamanho-img{
-    width: 100px;
-    height: 100px;
-}
-#gif{
-    width: 80px;
-    height: 50px ;
+/* LOGO CLICKIN */
+
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-#projeto{
-    text-align: justify;
-    border-style: solid;
-}
-h1{
-    color: black;
-    padding-top: 140px;
-    font-size: 48px;
-    
-}
-h2{
- color: black;
- font-size: 40px;
- text-decoration: none;
- 
-}
-h3{
-    text-align: center;
-}
-#simbolo{
-    position: absolute; 
-    left: 850px; /* posiciona a 90px para a esquerda */ 
-    top: 140px; /* posiciona a 70px para baixo */
-    width: 220px;
-    right: 220px;
-}
-.itens{
-    margin-top: 20%;
-    display: flex;
-    justify-content: baseline;
-    left: 2%;
-}
-.itenNav{
-    margin-left: 6%;
-}
-#foto{
-    display: flex;
-    justify-content: center;
-}
-.texto{
-    margin-left: 10px;
-}
+/* BOTÃO CADASTRAR/ENTRAR */
+
 #cadastro{
-    margin-left: 50%;
+    margin-left: 120%;
 }
 
-.footer {
+/* TITULO */
+
+h2{
+    text-align: center;
+    color: black;
+}
+
+/* BOTAO ENVIAR */
+
+#botao{
+    left: 115px;
+}
+
+/* FOOTER */
+
+#textorodape {
     display: flex;
     justify-content: center ;
-}
-
-.social li a {
-    /*tamanho da imagem*/
-    height: 32px;
-    width: 32px;
-    /*image replamecent (substituição por imagem)*/
-    display: block;
-    text-indent: -9999px;
-  
-}
-
-.social a[href*="facebook.com"] {
-    background-image: url(../../assets/images/facebook.png);
-}
-
-.social a[href*="twitter.com"] {
-    background-image: url(../../assets/images/twitter.png);
-}
-
-.social a[href*="instagram.com"] {
-    background-image: url(../../assets/images/instagram.png);
-}
-
-ul {
-    list-style: none
-    }
-li{
-    display: inline
-}
-
-.social li {
-    float: left;
-    margin-left: 25px;
-}
-.kl{
-    text-align: center;
-}
-.social{
-    margin-left: 150px;
-}
-.nav-link{
-    color: black;
-}
-#botao{
-left: 105px;
-}
-
-.titulo{
-    color: black;
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-
 }

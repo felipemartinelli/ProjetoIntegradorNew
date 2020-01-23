@@ -1,76 +1,38 @@
+/* LOGO CLICKIN */
+
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* BOTÃO CADASTRAR/ENTRAR */
+
+#cadastro{
+    margin-left: 120%;
+}
+
+/* VIDEO */
+
 .video{
     height: 320px;
     width: 530px;
     text-align: center;
+    margin-top: 19%;
 }
-#embaixadores{
-    margin-top:8%;
+
+/* TEXTO  */
+
+#texto{
+    margin-top: 15%;
     margin-block-end: 9%;
 }
-.footer {
+
+/* FOOTER */
+
+#textorodape {
     display: flex;
     justify-content: center ;
-}
-
-.social li a {
-    /*tamanho da imagem*/
-    height: 32px;
-    width: 32px;
-    /*image replamecent (substituição por imagem)*/
-    display: block;
-    text-indent: -9999px;
-  
-}
-
-.social a[href*="facebook.com"] {
-    background-image: url(/assets/images/facebook.png);
-}
-
-.social a[href*="twitter.com"] {
-    background-image: url(/assets/images/twitter.png);
-}
-
-.social a[href*="instagram.com"] {
-    background-image: url(/assets/images/instagram.png);
-}
-
-ul {
-    list-style: none
-    }
-li{
-    display: inline
-}
-
-.social li {
-    float: left;
-    margin-left: 25px;
-}
-.kl{
-    text-align: center;
-}
-.social{
-    margin-left: 415px;
-}
-
-.titulo{
-    color: black;
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-
-}
-
-ul {
-    list-style: none;
-    }
-
-li{
-    display: inline
-}
-
-.nav-link{
-    color: black;
-}
-
-#cadastro{
-    margin-left: 50%;
 }

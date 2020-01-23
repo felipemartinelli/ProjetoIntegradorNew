@@ -1,99 +1,51 @@
+/* LOGO CLICKIN */
 
-h1{
-    color: black;
-    
-    font-size: 48px;
-    
-}
 #logo{
     left: 50px; /* posiciona a 90px para a esquerda */ 
     top: 330px; /* posiciona a 70px para baixo */
     width: 200px;
     padding-top: 20px;
     padding-left: 20px;
-    
-
 }
 
+/* BOTÃO CADASTRAR/ENTRAR */
 
-#simbolo{
-
-    margin-top: 0px;
-    left: 850px;  
-    top: 140px; 
-    width: 420px;
-    right: 220px;
-}
-.itens{
-    margin-top: 20%;
-    display: flex;
-    justify-content: baseline;
-    left: 2%;
-}
-.itenNav{
-    margin-left: 40%;
-}
-#foto{
-    display: flex;
-    justify-content: center;
-}
-#texto{
-    margin-left: 5%;
-}
-#navbaixo{
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-    padding-right: 77px;
-    padding-left: 8%;
-  
-}
-.nav-link{
-
-    margin:10px;
-    color: rgb(92, 92, 92);
-    border: transparent;
-    
+#cadastro{
+    margin-left: 120%;
 }
 
-body{
-    background: #000;
-    padding-top: 10px;
-  } 
-.titulo{
-    text-decoration: none;
+
+/* BEM-VINDXS */
+
+h1{
     color: black;
-    font-family: 'Quicksand', sans-serif;
+    margin-top: 15%;
+    margin-left: 20%;
+    font-size: 48px;
+
 }
 
-.fundo{
-  
-    
-    background-image: linear-gradient(to bottom right, rgba(95, 95, 255, 0.705), rgba(208, 208, 235, 0.788));
-    margin-top: 120px;   
+/* IMAGEM CADEIRANTE */
+
+.cadeirante{
+
+    left: 850px;  
+    top: 180px; 
+    width: 220%;
+    right: 220%;
+
 }
 
-.tamanho{
-    height: 100px;
+/* LINKS QUEMSOMOS-CONTATO-EMBAIXADORES-FAQS */
+
+#navbaixo{
+
+    border: transparent;
+    margin-left: 16%;
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+} 
+
+.nav-link{
+    color: rgb(138, 138, 138);
 }
-
-.lead{
-    color:black;
-    font-family: 'Quicksand', sans-serif;
-    text-align: justify;
-}
-
-#carouselExampleIndicators{
-    text-align: center;
-}
-
-.carousel-item{
-    height: 400px;
-}
-
-#labelNossoTime{
-    margin-left: 8.5%;
-}
-
-
- 
