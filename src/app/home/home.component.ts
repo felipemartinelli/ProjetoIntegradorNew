@@ -160,8 +160,7 @@ export class HomeComponent implements OnInit {
           alert("E-mail e senha validados com sucesso!");
           Globals.user = res;
           this.router.navigate(['feed']);
-          $('#modalExemplo').hide();
-          $('.modal-backdrop').hide();
+          $('#btnfecharLogin').click();
 
         },
         err=>{
