@@ -1,0 +1,38 @@
+/* LOGO CLICKIN */
+
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* BOTÃO CADASTRAR/ENTRAR */
+
+#cadastro{
+    margin-left: 120%;
+}
+
+/* VIDEO */
+
+.video{
+    height: 320px;
+    width: 530px;
+    text-align: center;
+    margin-top: 19%;
+}
+
+/* TEXTO  */
+
+#texto{
+    margin-top: 15%;
+    margin-block-end: 9%;
+}
+
+/* FOOTER */
+
+#textorodape {
+    display: flex;
+    justify-content: center ;
+}
