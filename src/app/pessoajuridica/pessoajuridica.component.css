@@ -1,0 +1,47 @@
+#titulo{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 45PX;
+
+}
+/* LOGO CLICKIN */
+
+#logo{
+    width: 150px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+/* CARDS  */
+
+.card{
+    display: flex;
+    justify-content: right;
+    margin-top: 6%;
+}
+/* IMAGEM PERFIL */
+
+.imagemPerfil{
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-left: 17%;
+  margin-top: 8%;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* NUMERO AO LADO DE MENSAGENS-NOTIFICAÇOES */
+
+#badge{
+ background-color: #138496;
+ color: white;
+
+}
+
+/*FOOTER */
+#textorodape{
+    text-align: center;
+}

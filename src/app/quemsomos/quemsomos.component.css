@@ -1,0 +1,29 @@
+
+/* LOGO CLICKIN */
+
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* BOTÃO CADASTRAR/ENTRAR */
+
+#cadastro{
+    margin-left: 120%;
+}
+
+/* IMAGEM QUEM SOMOS */
+
+#imgqmsomos{
+    margin-top: 15%;
+    width: 90%; 
+    height: 80%;
+}
+
+
+
+
+

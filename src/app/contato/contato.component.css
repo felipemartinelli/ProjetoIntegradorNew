@@ -1,0 +1,46 @@
+/* LOGO CLICKIN */
+
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* BOTÃO CADASTRAR/ENTRAR */
+
+#cadastro{
+    margin-left: 120%;
+}
+
+/* TITULO */
+
+h2{
+    text-align: center;
+    color: black;
+}
+
+/* BOTAO ENVIAR */
+
+#botao{
+    left: 115px;
+}
+
+/* FOOTER */
+
+#textorodape {
+    display: flex;
+    justify-content: center ;
+}
+/*DROPDOW*/
+.dropdown{
+    margin-left: 120%;
+}
+
+#dropdownMenuButton{
+    margin-right: 10px;
+    height: 42px;
+    
+}
+

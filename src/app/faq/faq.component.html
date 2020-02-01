@@ -1,0 +1,465 @@
+<!-- NAVBAR -->
+
+<div class="col-md-7">
+        <nav class="navbar navbar-expand-lg navbar-transparent ">
+      
+          <a [routerLink]="'/home'" class="titulo"><strong>
+              <img src="/assets/images/logonew.png" id="logo">
+            </strong></a>
+          <a class="navbar-brand" href="#"></a>
+      
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Cadastre-se
+            </button>
+      
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" data-toggle="modal" data-target="#modalCadastro">Candidato</a>
+              <a class="dropdown-item" data-toggle="modal" data-target="#modalCadastroEmpresa">Empresa</a>
+            </div>
+          </div>
+      
+          <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-dark">Entrar</button>
+      
+        </nav>
+      </div>
+      
+      <!-- MODAL LOGIN -->
+      
+      <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="card-title text-center">
+                Entrar
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btnfecharLogin">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <label for="inputEmail">E-mail</label>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus
+                    [(ngModel)]="emailLogin" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputPassword">Senha</label>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Senha" [(ngModel)]="senhaLogin"
+                    [ngModelOptions]="{standalone: true}" required>
+                </div>
+                <div class="custom-control custom-checkbox mb-3 mt-3">
+                  <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <br>
+                  <a href="#">Esqueceu a senha? Clique aqui</a>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="validaLogin();">Entrar</button>
+                <hr class="my-4">
+              </form>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+      <!-- MODAL CADASTRO CANDIDATO -->
+      
+      <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="card-title text-center">
+                Cadastre-se
+              </h5>
+              <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <label for="inputNome">Nome Completo</label>
+                  <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputEmail">E-mail</label>
+                  <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputTelefone">Telefone</label>
+                  <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputPassword">Senha</label>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)"
+                    (keypress)="forcaSenha();" (keyup)="forcaSenha();" required data-toggle="tooltip"
+                    title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+      
+                  <span id="spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+                  <span id="spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
+                </div>
+      
+                <div class="form-label-group mt-3">
+                  <label for="inputPassword">Confirme a senha</label>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida"
+                    [ngModelOptions]="{standalone: true}" placeholder="Repita a sua senha" required>
+                  <span id="spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+      
+                </div>
+      
+                <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="valida();">Cadastrar</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MODAL CADASTRO EMPRESA -->
+      
+      <div class="modal fade" id="modalCadastroEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="card-title text-center">
+                Cadastre-se
+              </h5>
+              <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <label for="inputRazaoSocial">Razao Social</label>
+                  <input type="razaoSocial" id="inputrazaoSocial" class="form-control" [(ngModel)]="RazaoSocial"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite a razão social" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                    <label for="inputNomeFantasia">Nome Fantasia</label>
+                    <input type="nomeFantasia" id="inputNomeFantasia" class="form-control" [(ngModel)]="nomeFantasia"
+                      [ngModelOptions]="{standalone: true}" placeholder="Digite o nome fantasia" required autofocus>
+                    <span id="spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                  </div>
+                  <div class="form-label-group mt-3">
+                      <label for="inputCnpj">CNPJ</label>
+                      <input type="nomeCnpj" id="inputCnpj" class="form-control" [(ngModel)]="cnpj"
+                        [ngModelOptions]="{standalone: true}" placeholder="Digite o CNPJ" required autofocus>
+                      <span id="spanPadrao" *ngIf='_msgErroCnpj'>{{_msgErroCnpj}}</span>
+                    </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputEmail">E-mail</label>
+                  <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite o e-mail" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputTelefone">Telefone</label>
+                  <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required autofocus>
+                  <span id="spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+                </div>
+                <div class="form-label-group mt-3">
+                  <label for="inputPassword">Senha</label>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha"
+                    [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)"
+                    (keypress)="forcaSenha();" (keyup)="forcaSenha();" required data-toggle="tooltip"
+                    title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+      
+                  <span id="spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+                  <span id="spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
+                </div>
+      
+                <div class="form-label-group mt-3">
+                  <label for="inputPassword">Confirme a senha</label>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida"
+                    [ngModelOptions]="{standalone: true}" placeholder="Repita a sua senha" required>
+                  <span id="spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+      
+                </div>
+      
+                <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="valida();">Cadastrar</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<!-- TITULO -->
+
+<h4 class="display-4  p-0 mb-4">
+    Dúvidas em alta
+</h4>
+
+<!-- LISTA DE PERGUNTAS -->
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta1"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para criar uma conta do ClickIn?
+            </button>
+
+            <div class="collapse" id="resposta1">
+                <li> Acesse www.clickin.com.br</li>
+                <li>Clique em Cadastrar-se.</li>
+                <li>Insira seu nome, Telefone , email e senha</li>
+            </div>
+        </div>
+
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta2"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para entrar na minha conta do ClickIn?
+            </button>
+
+            <div class="collapse" id="resposta2">
+                <li> Acesse www.clickin.com.br</li>
+                <li> Clique em entrar</li>
+                <li> Insira seu login e senha</li>
+                <li> Clique em entrar novamente</li>
+            </div>
+        </div>
+
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta3"
+                aria-expanded="false" aria-controls="collapseExample">
+                Não consigo entrar no ClickIn. E agora?
+            </button>
+
+            <div class="collapse" id="resposta3">
+                <li> Verifique se os campos de login estão corretos</li>
+                <li> Se a senha não estiver funcionando tente redefinir</li>
+                <li> Descubra se sua conta foi desativada, se sim envie uma mensagem para nós</li>
+            </div>
+        </div>
+
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta4"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para criar uma senha forte do ClickIn?
+            </button>
+
+            <div class="collapse" id="resposta4">
+                <li> A senha deve ser fácil para lembrar, mas dificil para outros adivinharem</li>
+                <li> Use uma senha diferente de outras redes</li>
+                <li> Senhas longas são mais seguras</li>
+                <li> Indicamos para senha forte precisa ter 10 caracteres e ao menos um caracter especial (@#$&%)</li>
+            </div>
+        </div>
+
+        <div class="collapse botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta5"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para entrar na minha conta do ClickIn?
+            </button>
+
+            <div class="collapse" id="resposta5">
+                <li> Acesse www.clickin.com.br</li>
+                <li> Clique em entrar</li>
+                <li> Insira seu login e senha</li>
+                <li> Clique em entrar novamente</li>
+            </div>
+        </div>
+
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta6"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para entrar em contato com a central de ajuda?
+            </button>
+
+            <div class="collapse" id="resposta6">
+                <li> Acesse www.clickin.com.br</li>
+                <li> Clique no botão dúvidas</li>
+                <li> Deslize até o fim da página</li>
+                <li> Insira seus dados e envie sua dúvida, aguarde que logo responderemos por e-mail</li>
+            </div>
+        </div>
+        <div class="botoesperguntas">
+            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#resposta7"
+                aria-expanded="false" aria-controls="collapseExample">
+                Como faço para entrar em contato acessar a comunidade de ajuda PCD's?
+            </button>
+    
+            <div class="collapse" id="resposta7">
+                <li> Obtenha ajuda de outras pessoas no ClickIn com perguntas semelhantes e crie sua propria comunidade</li>
+              
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <img src="../../assets/images/interrogacao.png" id="foto">
+    </div>
+</div>
+
+
+<h4 class="display-4  p-0 mb-4">
+    O que temos de mais popular
+</h4>
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="../../assets/images/faq2.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">O que é o ClickIn?</h5>
+                            <p class="card-text">ClickIn é uma rede social voltada para relacionamentos profissionais de PCD's que pode ser usada para encontrar emprego, anunciar vagas, fazer parcerias e networking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3" onclick="" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../assets/images/faq2.png" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Preciso de algo especial para usa-lo?</h5>
+                        <p class="card-text">
+                            É indicado para pessoas com deficiência e empresas que estão com oportunidades de trabalho e inclusão no mercado de trabalho.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="../../assets/images/faq2.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Como posso fazer uma postagem no ClickIn?</h5>
+                            <p class="card-text">Você pode postar no seu feed pelo site clickIn.com, depois de logar na sua conta por um dispositivo móvel ou um aplicativo. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3" onclick="" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../../assets/images/faq2.png" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Como faço para editar uma postagem?</h5>
+                        <p class="card-text">
+                           Para editar sua postagem você precisa entrar no seu feed e clicar no botão editar e reescrever o que você precisa alterar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- TITULO -->
+
+<div class="row">
+
+    <div class="col-md-12" id="duvidas">
+        <h2 class="display-4  p-0 mb-4">Olá, ainda não encontrou o que precisa? <br> Mande sua dúvida para nós </h2>
+    </div>
+
+</div>
+
+<!-- INPUT DE MENSAGEM -->
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <div id="iframe">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="validationTooltip01"> Nome </label>
+                            <input type="text" class="form-control" placeholder="Digite o seu Nome Completo" value=""
+                                required [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}">
+                            <span *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label for="validationTooltip01"> Email </label>
+                            <input type="text" class="form-control" [(ngModel)]="email"
+                                [ngModelOptions]="{standalone: true}" placeholder="Digite o seu e-mail" value=""
+                                required>
+                            <span *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+                        </div>
+
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label for="exampleFormControlTextarea1">Mensagem</label>
+                            <textarea class="form-control" [(ngModel)]="mensagem" placeholder="Deixe sua pergunta" [ngModelOptions]="{standalone: true}"
+                                rows="3"></textarea>
+                            <span *ngIf='_msgErroMensagem'>{{_msgErroMensagem}}</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mt-2 mb-5" id="bot">
+                        <div class="col-md-3">
+                        </div>
+
+                        <div class="col-md-6" id="botao">
+                            <button class="btn btn-outline-dark" (click)="valida();">Enviar</button>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <!-- FOOTER -->
+
+            <hr>
+
+            <div class="col-md-12">
+                <div id="textorodape">
+                    <strong>ClickIn&reg;</strong> 2020
+                </div>
+            </div>

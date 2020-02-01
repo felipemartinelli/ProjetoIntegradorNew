@@ -1,0 +1,77 @@
+/* LOGO CLICKIN */
+
+#logo{
+    width: 150px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+/* CARDS  */
+
+.card{
+    display: flex;
+    justify-content: right;
+    margin-top: 6%;
+}
+
+/* IMAGEM PERFIL */
+
+.imagemPerfil{
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-left: 17%;
+  margin-top: 8%;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* NUMERO AO LADO DE MENSAGENS-NOTIFICAÇOES */
+
+#badge{
+ background-color: #138496;
+ color: white;
+
+}
+
+/* FOTO NO CARD DA POSTAGEM */
+
+#fotopost{
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* CARD DE PESQUISA */
+
+#cardpesquisar{
+    margin-top: 13% ;
+}
+
+/* CARD OPÇÕES DE SEGUIR */
+
+#opcoescurtir{
+    margin-top: 10%;
+}
+
+/* LINKS CURTIR-COMPARTILHAR-COMENTAR */
+
+.card-link{
+    color: #138496;
+}
+
+/* DROPDOWN EDITAR */
+
+#gedf-drop1{
+    color: #138496;
+}
+
+.dropdown-menu{
+color: #138496;
+}
