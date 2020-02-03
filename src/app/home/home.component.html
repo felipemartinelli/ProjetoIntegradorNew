@@ -210,23 +210,16 @@
     </div>
     <h1 class="display-3 d-flex justify-content-end ">Bem-Vindes à sua <br>
       comunidade de inclusão profissional</h1>
-    <div class="row">
-      <div class="col">
-        <nav class="navbar navbar-expand-lg navbar-transparent" id="navbaixo">
-          <a class="nav-link" (click)="triggerScrollToQS()">Quem Somos</a><strong>|</strong>
-          <a class="nav-link" (click)="triggerScrollToEm()">Embaixadores </a> <strong>|</strong>
-          <a class="nav-link" [routerLink]="'/contato'">Contato </a><strong>|</strong>
-          <a class="nav-link" [routerLink]="'/faq'">Ajuda</a>
- 
-        </nav>
-      </div>
-    </div>
   </div>
 
   <div class="col-md-6" id="cadeirante">
     <img src="../../assets/images/inclusao.png" width="420" height="450" title="imagem cadeira de rodas colorida"
       alt="imagem cadeira de rodas colorida">
   </div>
+</div>
+
+<div class="arrowicon">
+<a class="nav-link" (click)="triggerScrollToQS()"> <img src="../../assets/images/arrow-16-512.png" width="25" height="25"> </a>
 </div>
 
 <!-- TEXTO SOBRE NÓS QUEM SOMOS -->
@@ -291,7 +284,6 @@
       </a>
     </div>
 
-
     <!-- TEXTO DA PÁGINA EMBAIXADORES -->
 
 <div class="container">
@@ -329,6 +321,14 @@
 
        <div class="col-md-12">
          <div id="textorodape">
-           <strong>ClickIn&reg;</strong> 2020
+           <strong>ClickIn&reg;</strong> 2020 <strong>|</strong>
+         
+          
+            <a class="nav-link" [routerLink]="'/contato'">Contato </a><strong>|</strong>
+            <a class="nav-link" [routerLink]="'/faq'">Ajuda</a>
+
+ 
+     
+
          </div>
        </div>

@@ -1,0 +1,11 @@
+#logo{
+    left: 50px; /* posiciona a 90px para a esquerda */ 
+    top: 330px; /* posiciona a 70px para baixo */
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#titulo{
+    display: flex;
+    text-align: center;
+}

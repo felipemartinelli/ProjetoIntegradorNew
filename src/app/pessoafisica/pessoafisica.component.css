@@ -45,3 +45,7 @@
 #textorodape{
     text-align: center;
 }
+
+.nav-link{
+    cursor: pointer;
+}

@@ -20,7 +20,7 @@ import { PessoafisicaComponent } from './pessoafisica/pessoafisica.component';
 import { PessoajuridicaComponent } from './pessoajuridica/pessoajuridica.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import { PerfilpessoafisicaComponent } from './perfilpessoafisica/perfilpessoafisica.component';
+import { PerfilpessoafisicaComponent } from './perfilpessoafisica/perfilpessoafisica.component'
 
 
 @NgModule({

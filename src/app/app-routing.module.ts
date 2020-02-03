@@ -14,6 +14,7 @@ import { PessoafisicaComponent } from './pessoafisica/pessoafisica.component';
 import { PessoajuridicaComponent } from './pessoajuridica/pessoajuridica.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { PerfilpessoafisicaComponent } from './perfilpessoafisica/perfilpessoafisica.component';
+import { NoticiasComponent } from './noticias/noticias.component'
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent},
   { path: 'pessoafisica', component: PessoafisicaComponent},
   { path: 'pessoajuridica', component: PessoajuridicaComponent},
-  { path: 'perfilpessoafisica', component: PerfilpessoafisicaComponent}
+  { path: 'perfilpessoafisica', component: PerfilpessoafisicaComponent},
+  { path: 'noticias', component: NoticiasComponent}
 ];
 
 @NgModule({

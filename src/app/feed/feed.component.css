@@ -75,3 +75,7 @@
 .dropdown-menu{
 color: #138496;
 }
+
+.nav-link{
+    cursor: pointer;
+}
