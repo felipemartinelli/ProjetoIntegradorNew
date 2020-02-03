@@ -12,6 +12,8 @@ import { EmbaixadoresComponent } from './embaixadores/embaixadores.component';
 import { FaqComponent } from './faq/faq.component';
 import { PessoafisicaComponent } from './pessoafisica/pessoafisica.component';
 import { PessoajuridicaComponent } from './pessoajuridica/pessoajuridica.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { PerfilpessoafisicaComponent } from './perfilpessoafisica/perfilpessoafisica.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   { path: 'embaixadores', component: EmbaixadoresComponent},
   { path: 'faq', component: FaqComponent},
   { path: 'pessoafisica', component: PessoafisicaComponent},
-  { path: 'pessoajuridica', component: PessoajuridicaComponent}
+  { path: 'pessoajuridica', component: PessoajuridicaComponent},
+  { path: 'perfilpessoafisica', component: PerfilpessoafisicaComponent}
 ];
 
 @NgModule({

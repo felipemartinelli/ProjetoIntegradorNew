@@ -1,5 +1,7 @@
 package br.org.generation.ClickIn.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.org.generation.ClickIn.model.Post;
 import br.org.generation.ClickIn.model.Usuario;
 import br.org.generation.ClickIn.services.IUsuarioService;
 
@@ -48,6 +52,11 @@ public class UsuarioController {
 	public ResponseEntity<String> excluirUsuario(@PathVariable int id){
 		servico.excluirUsuario(id);
 		return ResponseEntity.ok("Deletado com sucesso");
+	}
+	
+	@GetMapping("/usuario/todos")
+	public ResponseEntity<List<Usuario>> mostrarTodos() {
+		return ResponseEntity.ok(servico.recuperarTodos());
 	}
 
 }

@@ -1,5 +1,7 @@
 package br.org.generation.ClickIn.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.org.generation.ClickIn.model.Post;
 import br.org.generation.ClickIn.services.IPostService;
 
@@ -19,6 +22,11 @@ public class PostController {
 	
 	@Autowired
 	private IPostService servico;
+	
+	@GetMapping("/post/todos")
+	public ResponseEntity<List<Post>> mostrarTodos() {
+		return ResponseEntity.ok(servico.recuperarTodos());
+	}
 	
 	@PostMapping("/post/novo")
 	public ResponseEntity<Post> inserirNovoComentario(@RequestBody Post post) {
@@ -51,6 +59,8 @@ public class PostController {
 		servico.excluirPost(id);
 		return ResponseEntity.ok("Deletado com sucesso");
 	}
+	
+	
 
 	
 

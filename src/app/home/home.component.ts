@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
 import * as $ from 'jquery';
 import { ViewportScroller } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 
 //Para funcionar o JQuery é preciso instalar as bibiliotecas a seguir:
 //npm install jquery --save
@@ -37,9 +39,10 @@ export class HomeComponent implements OnInit {
   private cont = 0;
 
 
-  constructor(private srv: UsuarioService, private router: Router,private viewportScroller: ViewportScroller) { }
+  constructor(private srv: UsuarioService, private router: Router, private _scrollToService: ScrollToService) { }
 
   ngOnInit() {
+
   }
   
   private valida(){
@@ -175,8 +178,23 @@ export class HomeComponent implements OnInit {
 
     }
 
-    public onClick(elementId: string): void { 
-      this.viewportScroller.scrollToAnchor(elementId);
+
+  public triggerScrollToQS() {
+    
+    const config: ScrollToConfigOptions = {
+      target: 'sobrenos'
+    };
+ 
+    this._scrollToService.scrollTo(config);
+  }
+
+  public triggerScrollToEm() {
+    
+    const config: ScrollToConfigOptions = {
+      target: 'embaixadores'
+    };
+ 
+    this._scrollToService.scrollTo(config);
   }
 
   }

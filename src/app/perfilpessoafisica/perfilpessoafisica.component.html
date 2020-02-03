@@ -1,0 +1,225 @@
+<!-- NAVBAR -->
+
+<div class="col-md-7">
+    <nav class="navbar navbar-expand-lg navbar-transparent ">
+
+        <a [routerLink]="'/home'" class="titulo"><strong>
+                <img src="/assets/images/logonew.png" id="logo">
+            </strong></a>
+        <a class="navbar-brand" href="#"></a>
+
+    </nav>
+</div>
+
+<!-- CARD PERFIL -->
+
+<div class="container-fluid gedf-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            
+                <div class="card-body">
+                    
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Alterar Foto
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    
+                    <div class="h5 mt-4">{{ usuario.nome }}</div>
+                    <h5>Desenvolvedor Java Jr Full Stack</h5>
+                </div>
+
+                <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                                <a class="nav-link" [routerLink]="'/feed'">Feed</a>
+                                <span class="badge badge badge-pill" ></span>
+                              </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                          Mensagens
+                          <span class="badge badge badge-pill"  id="badge">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                          Notificações
+                          <span class="badge badge badge-pill"  id="badge">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                                Noticias
+                                <span class="badge badge badge-pill" id="badge">10</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                                    Configurações
+                                    <span class="badge badge badge-pill"></span>
+                                  </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                                    Sair
+                                    <span class="badge badge badge-pill"></span>
+                                  </li>
+                      </ul>
+              
+            
+        </div>
+
+    <div class="col-md-9">
+    <div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="profile-head">
+                            <h5>
+                                ClickIn
+                            </h5>
+                            <h6>
+                                Desenvolvedor Java Jr Full Stack
+                            </h6>
+                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#acad" role="tab" aria-controls="profile" aria-selected="false">Informações Acadêmicas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#prof" role="tab" aria-controls="profile" aria-selected="false">Experiências Profissionais</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil" [routerLink]="'/pessoafisica'"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nome</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Generation</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>generates@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Telefone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>11 99999-9999</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Cargo</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Desenvolvedor Full Stack</p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="acad" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Experience</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Hourly Rate</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>10$/hr</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Total Projects</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>230</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>English Level</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Availability</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>6 months</p>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Bio</label><br/>
+                                <p>Your detail description</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="prof" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Ultima Empresa</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Expert</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Cargo</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>10$/hr</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Total Projects</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>230</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>English Level</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Expert</p>
+                            </div>
+                        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Your Bio</label><br/>
+                        <p>Your detail description</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+</div>
+</div>

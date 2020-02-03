@@ -39,7 +39,7 @@ export class FeedComponent implements OnInit {
     }
     else {
       this.usuario = Globals.user;
-    }*/
+    } */
   }
 
   acharTodos() {
@@ -52,9 +52,10 @@ export class FeedComponent implements OnInit {
 
   enviarDados() {
     if (this.textPost != null || this.textPost != "") {
-      this.post.idPostagem = this.i++;
+    //  this.post.idPostagem = this.i++;
       this.post.texto = this.textPost;
       this.post.dataInclusao = "23/01/2020";
+      this.post.imagem = null;
 
       this.postService.inserePost(this.post).subscribe(
         res => {
@@ -88,8 +89,7 @@ export class FeedComponent implements OnInit {
   }
 
   enviarAlteracoes(id: number) {
-    //this.post.idPostagem = id;
-    this.post.titulo = null;
+    //this.post.idPostagem = id;;
     this.post.texto = this.textPostModel;
     this.post.dataInclusao = "23/01/2020";
 

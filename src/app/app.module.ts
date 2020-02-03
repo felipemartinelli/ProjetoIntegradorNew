@@ -19,6 +19,8 @@ import { FaqComponent } from './faq/faq.component';
 import { PessoafisicaComponent } from './pessoafisica/pessoafisica.component';
 import { PessoajuridicaComponent } from './pessoajuridica/pessoajuridica.component';
 import { NoticiasComponent } from './noticias/noticias.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { PerfilpessoafisicaComponent } from './perfilpessoafisica/perfilpessoafisica.component';
 
 
 @NgModule({
@@ -37,13 +39,15 @@ import { NoticiasComponent } from './noticias/noticias.component';
     FaqComponent,
     PessoafisicaComponent,
     PessoajuridicaComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    PerfilpessoafisicaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollToModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

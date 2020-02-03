@@ -8,6 +8,10 @@
     padding-left: 20px;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 /* BOTÃO CADASTRAR/ENTRAR */
 
 #cadastro{
@@ -90,7 +94,7 @@ h3{
 
 h4{
     text-align: center;
-    margin-top: %;
+    
 }
 
 /* TEXTO */
@@ -133,13 +137,18 @@ p{
     margin-top: 28%;
 }
 
+#jumb{
+    background: linear-gradient(to bottom, #ffffff 0%, #ff9933 100%);
+}
+
+
 /* TEXTO  */
 
 #texto{
     margin-top: 18%;
     margin-block-end: 9%;
 }
-
+/* 
 #embaixadores{
-    margin-top: %;
-}
+   margin-top: %;
+}*/
