@@ -51,4 +51,9 @@ public class PostServiceImpl implements IPostService {
 		
 	}
 
+	@Override
+	public List<Post> buscarPorPalavraChave(String palavra) {
+		return repo.findAllByTextoContains(palavra);
+	}
+
 }

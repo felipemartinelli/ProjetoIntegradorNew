@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.ClickIn.model.Post;
 import br.org.generation.ClickIn.model.Usuario;
+import br.org.generation.ClickIn.security.Autenticador;
+import br.org.generation.ClickIn.security.Token;
 import br.org.generation.ClickIn.services.IUsuarioService;
 
 @RestController
@@ -58,5 +60,38 @@ public class UsuarioController {
 	public ResponseEntity<List<Usuario>> mostrarTodos() {
 		return ResponseEntity.ok(servico.recuperarTodos());
 	}
-
+	
+	@PostMapping("/usuario/login")
+	public ResponseEntity<Token> autentica(@RequestBody Usuario usuario) {
+		
+		List<Usuario> usuarios = servico.recuperarTodos();
+		boolean exite = false;
+		
+		for(Usuario c : usuarios) {
+			if(usuario.getEmail().equals(c.getEmail()) && c.getSenha().equals(usuario.getSenha())) {
+				usuario = c;
+				exite = true;
+			}
+		}
+		
+		if(exite) {
+			String tk = Autenticador.generateToken(usuario);
+			Token token = new Token();
+			token.setStrToken(tk);
+			return ResponseEntity.ok(token);
+		}
+		return ResponseEntity.status(403).build();
+	}
+	
+	@GetMapping("/usuario/infoDoUsuario")
+	public ResponseEntity<Usuario> getInfo(@RequestParam String token){
+		if (token != null) {
+			if (Autenticador.isValid(token)) {
+				return ResponseEntity.ok(Autenticador.getUser(token));
+			}
+			return ResponseEntity.status(403).build();
+		}
+		return ResponseEntity.badRequest().build();
+	}
+	
 }

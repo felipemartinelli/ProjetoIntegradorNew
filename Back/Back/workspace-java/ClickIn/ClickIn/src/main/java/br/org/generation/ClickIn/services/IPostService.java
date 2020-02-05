@@ -11,5 +11,6 @@ public interface IPostService {
 	public List<Post> recuperarTodos();
 	public Post recuperarPorId(int id);
 	public void excluirPost(int id);
+	public List<Post> buscarPorPalavraChave(String palavra);
 
 }

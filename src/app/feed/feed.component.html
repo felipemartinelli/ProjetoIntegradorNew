@@ -3,7 +3,8 @@
 <div class="col-md-7">
     <nav class="navbar navbar-expand-lg navbar-transparent ">
 
-        <a [routerLink]="'/home'" class="titulo"><strong>
+        <a [routerLink]="'/home'" class="titulo">
+            <strong>
                 <img src="/assets/images/logonew.png" id="logo">
             </strong></a>
         <a class="navbar-brand" href="#"></a>
@@ -36,7 +37,7 @@
                                 <span class="badge badge badge-pill" id="badge">10</span>
                               </li>
                               <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                                <a class="nav-link" [routerLink]="'/home'"> Sair </a>
+                                <a class="nav-link" (click)="logout();"> Sair </a>
                                     <span class="badge badge badge-pill"></span>
                                   </li>
                       </ul>
@@ -81,9 +82,8 @@
 
 
             <!--- \\\\\\\Post-->
-            <div *ngIf='_post == null'>
-                <div class="card gedf-card mt-4" *ngFor="let item of posts">
-                    <div class="card gedf-card">
+            <div *ngIf='_posts == null'>
+                <div class="card gedf-card mt-4" *ngFor="let item of usuario.posts">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
 
-
+<!-- MODAL -->
 
                                 <div>
                                     <div class="dropdown">
@@ -149,7 +149,7 @@
 
                         </div>
                         <div class="card-body">
-                            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{item.dataInclusao}}
+                            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{item.dataInclusao }}
                             </div>
 
                             <p class="card-text">
@@ -160,7 +160,7 @@
                             <a href="#" class="card-link"><i class="fa fa-gittip"></i> Curtir</a>
                             <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentar</a>
                             <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Compartilhar</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -173,20 +173,54 @@
 
 
 
-            <div *ngIf='_post != null'>
-                <div class="card gedf-card">
+            <div *ngIf='_posts != null'>
+                <div class="card gedf-card" *ngFor="let item of usuario._posts">
+                 
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="mr-2">
-                                    <img class="rounded-circle" width="45"
+                                    <img class="rounded-circle" id="fotopost"
                                         src="../../assets//images/waves com coqueiro.png" alt="">
                                 </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">{{usuario.nome}}</div>
                                 </div>
                             </div>
+<!-- MODAL -->
+                            <div class="modal fade" id="modalAlterar" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="card-title text-center">
+                                            Editar sua publicação {{item.idPostagem}}
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Fechar" id="btnfecharLogin">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-signin">
+                                            <div class="form-label-group">
+                                                <label class="sr-only" for="message">post</label>
+                                                <textarea class="form-control" id="message"
+                                                    [(ngModel)]="textPostModel"
+                                                    [ngModelOptions]="{standalone: true}" rows="3"
+                                                    placeholder="O que você gostaria de compartilhar?"
+                                                    value="item.idPostagem"></textarea>
+                                            </div>
+                                            <button class="btn btn-lg btn-info btn-block text-uppercase mt-3"
+                                                (click)="enviarAlteracoes(item.idPostagem);">Alterar</button>
+                                            <hr class="my-4">
+                                        </form>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+<!-- MODAL -->
 
                             <div>
                                 <div class="dropdown">
@@ -204,10 +238,10 @@
 
                     </div>
                     <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{_post.dataInclusao}}</div>
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>{{item.dataInclusao}}</div>
 
                         <p class="card-text">
-                            {{_post.texto}}
+                            {{item.texto}}
                         </p>
                     </div>
                     <div class="card-footer">
@@ -215,7 +249,8 @@
                         <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentar</a>
                         <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Compartilhar</a>
                     </div>
-                </div>
+                
+            </div>
             </div>
 
         </div>
@@ -230,12 +265,12 @@
                    
             
                 <div class="card-body">
-                    <h5 class="card-title h6 text-muted">Pesquise</h5>
+                    <h5 class="card-title h6 text-muted">Encontre no ClickIn</h5>
                     <p class="card-text"></p>
-                    <input type="text" class="form-control" placeholder="Buscar no ClickIn" [(ngModel)]="idBusca">
+                    <input type="text" class="form-control" placeholder="Busque por palavra chave" [(ngModel)]="palavraPesquisada">
                     <span *ngIf='_msgErro'>{{_msgErro}}</span>
                     <br>
-                    <button (click)="pesquisar();" id="butaum" class="btn btn-info btn-sm">Buscar</button>
+                    <button (click)="pesquisarPalavra();" id="butaum" class="btn btn-info btn-sm">Buscar</button>
                     <br>
                     <br>
                     <button (click)="acharTodos();" id="butaum" class="btn btn-info btn-sm ">Mostrar Todos</button>

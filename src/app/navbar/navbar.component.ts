@@ -140,7 +140,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-    validaLogin(){
+ /*   validaLogin(){
 
       this.usuario.email = this.emailLogin;
       this.usuario.senha = this.senhaLogin;
@@ -156,7 +156,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-    }
+    }*/
 
 
   }

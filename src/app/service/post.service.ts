@@ -20,8 +20,12 @@ export class PostService {
     return this.http.get("http://localhost:8080/post/todos");
   }
 
-  recuperaPostPeloID(id:number){
+  recuperaPostPeloID(id: number){
     return this.http.get("http://localhost:8080/post/"+id);
+  }
+
+  recuperaPostPelaPalavra(palavra: String){
+    return this.http.get("http://localhost:8080/post/busca/?key="+palavra);
   }
 
   public inserePost(posts:Post){

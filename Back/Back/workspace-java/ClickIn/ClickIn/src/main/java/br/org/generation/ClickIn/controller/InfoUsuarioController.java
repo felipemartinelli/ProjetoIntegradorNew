@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.generation.ClickIn.model.Comentario;
 import br.org.generation.ClickIn.model.InfoUsuario;
 import br.org.generation.ClickIn.services.IInfoUsuarioService;
 

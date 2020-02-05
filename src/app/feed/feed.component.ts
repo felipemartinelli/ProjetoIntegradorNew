@@ -4,6 +4,7 @@ import { Post } from '../model/Post';
 import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
 import { Usuario } from '../model/Usuario';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-feed',
@@ -13,8 +14,11 @@ import { Usuario } from '../model/Usuario';
 })
 export class FeedComponent implements OnInit {
 
+  now = new Date();
   usuario: Usuario;
   posts: Post[];
+  _posts: Post[];
+  usuarios: Usuario[];
   private idBusca: number;
   private idPostagem;
   private _msgErro: string = null;
@@ -22,44 +26,60 @@ export class FeedComponent implements OnInit {
   private vetorOunao: boolean = true;
   private textPost: string;
   private textPostModel: string;
+  private palavraPesquisada: string;
   public post: Post = new Post();
   private i: number = 1;
   public idModal: number = 0;
 
 
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private postService: PostService, private router: Router, private srv: UsuarioService) { }
 
 
 
   ngOnInit() {
-    this.acharTodos();
-    this.usuario = Globals.user;
-   /* if (!this.usuario) {
+
+    if(localStorage.getItem("MyToken")){
+        
+
+        this.srv.buscarInfo(localStorage.getItem("MyToken")).subscribe(
+          (res: Usuario) => {
+            
+                Globals.user = res;
+                this.usuario = new Usuario();
+                this.usuario.nome = res.nome;
+                this.usuario.idUsuario = res.idUsuario;
+                this.acharTodos();
+          },   
+        err => {
+          console.log(err);
+          alert("Erro ao inserir");
+        });
+      
+    }else{
+      alert("Você Precisa estar conectado para acessar essa página!")
       this.router.navigate(['/home']);
+      console.log(localStorage.getItem);
     }
-    else {
-      this.usuario = Globals.user;
-    } */
   }
 
   acharTodos() {
-    this._post = null;
-    this.postService.getAllPosts().subscribe((postOut: Post[]) => this.posts = postOut);
-    console.log(this.posts);
-    this.vetorOunao = true;
-    console.log(this.vetorOunao);
+    this._posts = null;
+    this.srv.recuperaPostsUsuario(this.usuario.idUsuario).subscribe((postOut: Usuario) => this.usuario = postOut);
   }
 
   enviarDados() {
     if (this.textPost != null || this.textPost != "") {
-    //  this.post.idPostagem = this.i++;
+
       this.post.texto = this.textPost;
-      this.post.dataInclusao = "23/01/2020";
+      this.post.dataInclusao = this.now.toLocaleDateString();
+      console.log(this.post.dataInclusao);
       this.post.imagem = null;
+      this.post.usuario = this.usuario;
 
       this.postService.inserePost(this.post).subscribe(
         res => {
           this.acharTodos();
+          
         },
         err => {
           console.log(err);
@@ -83,7 +103,7 @@ export class FeedComponent implements OnInit {
         this.textPostModel = res.texto; 
       },
 
-      (err) => { alert("deu rum!");
+      (err) => { alert("deu ruim!");
     });
     console.log(this.idModal);
   }
@@ -126,5 +146,24 @@ export class FeedComponent implements OnInit {
       });
     }
   }
+
+  private pesquisarPalavra() {
+
+    this.srv.recuperaPostsUsuario(this.usuario.idUsuario).subscribe((postOut: Usuario) => this.usuario = postOut);
+      this.postService.recuperaPostPelaPalavra(this.palavraPesquisada).subscribe((res: Post[]) => {
+        this._posts = res;
+        console.log(this._posts);
+      
+    });
+  }
+
+  private logout(){
+  if(localStorage.getItem("MyToken")){
+    localStorage.removeItem("MyToken");
+    window.location.reload();
+  }else{
+  this.router.navigate(['/home']);
+  }
+}
 
 }

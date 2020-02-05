@@ -1,3 +1,4 @@
+import { Usuario } from './Usuario';
 
 export class Post{
 
@@ -5,5 +6,5 @@ export class Post{
     public texto: string;
     public dataInclusao: string;
     public imagem: string;
-
+    public usuario: Usuario;
 }

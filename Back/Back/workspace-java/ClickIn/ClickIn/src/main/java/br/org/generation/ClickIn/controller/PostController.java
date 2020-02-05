@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.org.generation.ClickIn.model.Post;
@@ -58,6 +59,11 @@ public class PostController {
 	public ResponseEntity<String> excluirComentario(@PathVariable int id){
 		servico.excluirPost(id);
 		return ResponseEntity.ok("Deletado com sucesso");
+	}
+	
+	@GetMapping("/post/busca/")
+	public ResponseEntity<List<Post>> buscaPorKeyword(@RequestParam String key){
+		return ResponseEntity.ok(servico.buscarPorPalavraChave(key));
 	}
 	
 	

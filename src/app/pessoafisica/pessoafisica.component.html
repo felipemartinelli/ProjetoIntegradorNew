@@ -47,81 +47,70 @@
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inserirnome">Nome</label>
-                                <input type="text" class="form-control" id="inserir nome"
-                                    placeholder="Como você gostaria do seu nome no perfil">
+                                <label for="inserirnome">Nome Completo</label>
+                                <input type="text" class="form-control" id="nomeCompleto"
+                                    placeholder="Como você gostaria do seu nome no perfil" [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}" value={{usuario.nome}}>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inserirsobrenome">Sobrenome</label>
-                                <input type="text" class="form-control" id="inserirSobrenome"
-                                    placeholder="Insira seu sobrenome">
+                                <label for="inserirCPF">CPF</label>
+                                <input type="text" class="form-control" id="cpf"
+                                    placeholder="Insira seu CPF" [(ngModel)]="cpf" [ngModelOptions]="{standalone: true}" value={{infousuario.cpf}}>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inserirInfoAcademica">Formação acadêmica</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inserirInfoProfissional">Formação profissional</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-    
-                        </div>
+                        
     
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inserirendereco">Endereço</label>
-                                <input type="text" class="form-control" id="inserirEndereço"
-                                    placeholder="Insira seu endereço para buscar as vagas por perto">
+                                <input type="text" class="form-control" id="endereco"
+                                    placeholder="Insira seu endereço para buscar as vagas por perto" [(ngModel)]="endereco" [ngModelOptions]="{standalone: true}" value={{infousuario.endereco}}>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEstado">Estado</label>
-                                <select id="inputEstado" class="form-control">
-                                    <option selected>Selecionar</option>
-                                    <option>AC</option>
-                                    <option>AL</option>
-                                    <option>AP</option>
-                                    <option>AM</option>
-                                    <option>BA</option>
-                                    <option>CE</option>
-                                    <option>DF</option>
-                                    <option>ES</option>
-                                    <option>GO</option>
-                                    <option>MA</option>
-                                    <option>MS</option>
-                                    <option>MG</option>
-                                    <option>PA</option>
-                                    <option>PB</option>
-                                    <option>PR</option>
-                                    <option>PE</option>
-                                    <option>PI</option>
-                                    <option>RJ</option>
-                                    <option>RN</option>
-                                    <option>RS</option>
-                                    <option>RO</option>
-                                    <option>RR</option>
-                                    <option>SC</option>
-                                    <option>SP</option>
-                                    <option>SE</option>
-                                    <option>TO</option>
-                                </select>
+
+                                    <label for="inserirtelefone">Telefone</label>
+                                    <input type="text" class="form-control" id="telefone" value={usuario.telefone}}
+                                        placeholder="Insira seu telefone" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}"  >
+                                
                             </div>
     
                         </div>
                         <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inserirSetor">Setor</label>
-                                    <input type="text" class="form-control"                                    placeholder="Insira seu setor de atuação">
+                                    <input type="text" class="form-control" id = "setor"                                    placeholder="Insira seu setor de atuação" [(ngModel)]="setor" [ngModelOptions]="{standalone: true}" value={{infousuario.setor}}>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inserirsobrenome">Cargo</label>
-                                    <input type="text" class="form-control" placeholder="Insira seu cargo atual. EX: autonomo, farmacêutico etc..">
+                                    <input type="text" class="form-control" id = "cargo" placeholder="Insira seu cargo atual. EX: autonomo, farmacêutico etc.." [(ngModel)]="cargo" [ngModelOptions]="{standalone: true}" value={{infousuario.cargo}}>
                                 </div>
                             </div>
 
+                            <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inserirInfoAcademica">Formação acadêmica</label>
+                                        <textarea class="form-control" id="formacaoAcademica" rows="3" [(ngModel)]="formacaoAcademica" [ngModelOptions]="{standalone: true}" value={{infousuario.infoAcademica}}></textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inserirInfoProfissional">Formação profissional</label>
+                                        <textarea class="form-control" id="formacaoProfissional" rows="3" [(ngModel)]="formacaoProfissional" [ngModelOptions]="{standalone: true}" value={{infousuario.infoProfissional}}></textarea>
+                                    </div>
+            
+                                </div>
+
+                                <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inserirSenha">Senha</label>
+                                            <input type="text" class="form-control" id = "senha" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inserirInfoProfissional">Confirmar Senha</label>
+                                            <input type="text" class="form-control" id = "senhaRepetida" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}">
+                                        </div>
+                
+                                    </div>
+
                             <button class="btn btn-lg btn-info btn-block text-uppercase mt-3"
-                            (click)="enviarAlteracoes(item.idPostagem);">Alterar</button>
+                            (click)="enviar();">Alterar</button>
 
                     </form>
 

@@ -21,9 +21,9 @@ export class DetalheComponent implements OnInit {
   ngOnInit() {
       this.id = this.rota.snapshot.params["id"];
 
-      this.srv.recuperaDetalhe(this.id).subscribe((res:Usuario)=>{
-      this.usuario = res;
-  });
+    //  this.srv.recuperaDetalhe(this.id).subscribe((res:Usuario)=>{
+    //  this.usuario = res;
+ // });
 
 }
 

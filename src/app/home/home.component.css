@@ -157,3 +157,16 @@ p{
 .arrowicon{
     margin-left: 50%;
 }
+
+#spanPadrao{
+    color: red;
+}
+
+
+#spanSenhaForte{
+    color: green;
+}
+
+#spanSenhaFraca{
+    color: blue;
+}
