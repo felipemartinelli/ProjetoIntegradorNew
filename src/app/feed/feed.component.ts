@@ -6,6 +6,7 @@ import { Globals } from '../model/Globals';
 import { Usuario } from '../model/Usuario';
 import { UsuarioService } from '../service/usuario.service';
 import { Comentario } from '../model/Comentario';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-feed',
@@ -19,6 +20,7 @@ export class FeedComponent implements OnInit {
   usuario: Usuario;
   posts: Post[];
   _posts: Post[];
+  comentarios: Comentario[];
   usuarios: Usuario[];
   private idBusca: number;
   private idPostagem;
@@ -71,6 +73,11 @@ export class FeedComponent implements OnInit {
     this.srv.recuperaPostsUsuario(this.usuario.idUsuario).subscribe((postOut: Usuario) => this.usuario = postOut);
   }
 
+  acharComentariosUsuario(id: number){
+    this.postService.recuperaPostPeloID(id).subscribe((postOut: Post) => this.post = postOut);
+   // this.acharTodos();
+  }
+
   enviarComentarios(id: number){
 
     if(this.textComentario !=null || this.textComentario != ""){
@@ -81,6 +88,8 @@ export class FeedComponent implements OnInit {
       this.post.idPostagem = id;
       this.comentario.post = this.post;
 
+      $('.hidden').css("display","none");
+      
       console.log(id);
       console.log(this.post.idPostagem);
 
@@ -88,7 +97,8 @@ export class FeedComponent implements OnInit {
 
       this.postService.insereComentario(this.comentario).subscribe(
         res => {
-          alert("inserido com sucesso!")
+          alert("inserido com sucesso!");
+          this.acharComentariosUsuario(id);
           
         },
         err => {
@@ -150,7 +160,7 @@ export class FeedComponent implements OnInit {
   enviarAlteracoes(id: number) {
     //this.post.idPostagem = id;;
     this.post.texto = this.textPostModel;
-    this.post.dataInclusao = "23/01/2020";
+    this.post.dataInclusao = this.now.toLocaleDateString();
 
     
 

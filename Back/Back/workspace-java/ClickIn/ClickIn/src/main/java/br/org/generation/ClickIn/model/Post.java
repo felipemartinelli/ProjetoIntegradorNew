@@ -66,6 +66,13 @@ public class Post {
 		this.dataInclusao = dataInclusao;
 	}
 	
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
