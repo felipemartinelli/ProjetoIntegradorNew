@@ -6,8 +6,10 @@
     padding-left: 20px;
 }
 
-/* CONTEÚDO SOBRE-INFO-EXPERIENCIAS */
 
+body{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
@@ -110,13 +112,11 @@
     display: flex;
     justify-content: right;
     margin-top: 6%;
-    box-shadow: 1px 2px  #b4b4b4;   
 }
 
 #cardPerfil{
     margin-top: 5%;
     margin-left: 45px;
-    box-shadow: 1px 2px  #b4b4b4;   
 }
 
 /* NUMERO AO LADO DE MENSAGENS-NOTIFICAÇOES */
@@ -143,14 +143,12 @@
 
 #cardpesquisar{
     margin-top: 13% ;
-    box-shadow: 1px 2px  #b4b4b4;   
 }
 
 /* CARD OPÇÕES DE SEGUIR */
 
 #opcoescurtir{
     margin-top: 10%;
-    box-shadow: 1px 2px  #b4b4b4;   
 }
 
 /* LINKS CURTIR-COMPARTILHAR-COMENTAR */
@@ -181,8 +179,7 @@ color: #138496;
     display: flex;
     justify-content: center;
     height: 300px;
-    width: 1200px; 
-    box-shadow: 1px 2px  #b4b4b4;   
+    width: 1200px;    
 }
 #perfil{
     border-style: solid;
@@ -192,13 +189,4 @@ color: #138496;
     width: 200px;
     margin-top: 13%;
     margin-left: 5%;
-    box-shadow: 1px 2px  #b4b4b4;   
-}
-
-.list-group{
-    box-shadow: 3px 1px 3px 3px #b4b4b4;
-}
-
-#nomeUser{
-    text-align: justify;
 }

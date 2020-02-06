@@ -7,15 +7,14 @@
                     <img src="/assets/images/logonew.png" id="logo">
                 </strong></a>
             <a class="navbar-brand" href="#"></a>
-            
     
         </nav>
     </div>
     
 <div class="row capa" style="justify-content: center;">
-        <img id="capa" src="../../assets/images/capaperfil.jpg" alt="">
+        <img id="capa" src="../../assets/images/capagenerates.png" alt="">
         <div>
-            <img id="perfil" src="../../assets/images/perfiluser.png" style="position:absolute; top:50px; left:50px"
+            <img id="perfil" src="../../assets/images/generationbrasil.png" style="position:absolute; top:50px; left:50px"
                 alt="" class="rounded-circle">
         </div>
     </div>
@@ -26,8 +25,9 @@
     <div class="row">
         <div class="col-md-3" id="cardPerfil">
             <h2>
-                <div class="h5 mt-2" id="nomeUser">{{ usuario.nome }}</div>
+                <div class="h5 mt-2" id="nomeUser">{{ usuario.nomeFantasia }}</div>
             </h2>  
+
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
                     <a class="nav-link" [routerLink]="'/feed'">Feed</a>
@@ -36,38 +36,12 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
                     <a class="nav-link" [routerLink]="'/noticias'">Noticias</a>
                     <span class="badge badge badge-pill" id="badge">6</span>
-                </li>
+                </li>                    
                 <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
                     <a class="nav-link" (click)="logout();"> Sair </a>
                     <span class="badge badge badge-pill"></span>
                 </li>
             </ul>
-
-            <!-- CARD COM OPÇÕES PARA SEGUIR -->
-
-            <div class="div" id="opcoescurtir">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                            <h6>Empresas que você segue</h6>
-    
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                            <img class="rounded-circle" id="fotopost" src="../../assets/images/generationbrasil.png" alt="">
-                            <a class="nav-link" [routerLink]="'/perfilpessoajuridica'">Generation</a>
-                            <button type="button" class="btn btn-info btn-sm">Seguindo</button>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                            <img class="rounded-circle" id="fotopost" src="../../assets/images/ios.jpg" alt="">
-                            IOS
-                            <button type="button" class="btn btn-info btn-sm">Seguindo</button>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                            <img class="rounded-circle" id="fotopost" src="../../assets/images/inclusao.png" alt="">
-                            Clickin
-                            <button type="button" class="btn btn-info btn-sm">Seguindo</button>
-                        </li>
-                    </ul>
-                </div>
 
         </div>
 
@@ -86,18 +60,18 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#acad" role="tab"
-                                            aria-controls="profile" aria-selected="false">Informações Acadêmicas</a>
+                                            aria-controls="profile" aria-selected="false">Contato</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#prof" role="tab"
-                                            aria-controls="profile" aria-selected="false">Experiências Profissionais</a>
+                                            aria-controls="profile" aria-selected="false">Vagas</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil"
-                                [routerLink]="'/pessoafisica'" />
+                                [routerLink]="'/pessoajuridica'" />
                         </div>
                     </div>
                     <div class="row">
@@ -105,69 +79,78 @@
                             <div class="tab-content profile-tab" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
+
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Nome</label>
+                                            <label>Nome Fantasia</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{usuario.nome}}</p>
+                                            <p>{{usuario.nomeFantasia}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>E-mail</label>
+                                            <label>Razão Social</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{usuario.email}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Telefone</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{usuario.telefone}}</p>
+                                            <p>{{usuario.razaoSocial}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Empresa</label>
+                                            <label>CNPJ</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Generation</p>
+                                            <p>{{usuario.cnpj}}</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Cargo</label>
+                                            <label>Informações da Empresa</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{infousuario.cargo}}</p>
+                                            <p>{{infousuario.infoEmpresa}}</p>
                                         </div>
                                     </div>
                                     
                                 </div>
                                 <div class="tab-pane fade" id="acad" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Informações Acadêmicas</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>{{infousuario.infoAcademica}}</p>
-                                        </div>
-                                    </div>
-
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>E-mail</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{usuario.email}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Telefone</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{usuario.telefone}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Endereço</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{infousuario.endereco}}</p>
+                                                    </div>
+                                                </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="prof" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Experiências Profissionais</label>
+                                            <label>Vagas</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{infousuario.infoProfissional}}</p>
+                                            <p>{{infousuario.infoVagas}}</p>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>

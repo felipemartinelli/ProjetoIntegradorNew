@@ -21,7 +21,7 @@
                         <img src="../../assets//images/waves com coqueiro.png" class="imagemPerfil" alt="">
                     </div>
                     <div class="h5 mt-4">{{ usuario.nome }}</div>
-                    <h5>Desenvolvedor Java Jr Full Stack</h5>
+                    <div class="h5 mt-4">{{ usuario.nomeFantasia }}</div>
                 </div>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
@@ -33,7 +33,7 @@
                             <span class="badge badge badge-pill" id="badge">10</span>
                           </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                        <a class="nav-link" [routerLink]="'/home'"> Sair </a>
+                        <a class="nav-link" (click)="logout();"> Sair </a>
                         <span class="badge badge badge-pill"></span>
                     </li>
                 </ul>
@@ -68,7 +68,7 @@
                             <div class="form-group col-md-6">
 
                                     <label for="inserirtelefone">Telefone</label>
-                                    <input type="text" class="form-control" id="telefone" value={usuario.telefone}}
+                                    <input type="text" class="form-control" id="telefone" value={{usuario.telefone}}
                                         placeholder="Insira seu telefone" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}"  >
                                 
                             </div>
@@ -97,17 +97,7 @@
             
                                 </div>
 
-                                <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inserirSenha">Senha</label>
-                                            <input type="text" class="form-control" id = "senha" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inserirInfoProfissional">Confirmar Senha</label>
-                                            <input type="text" class="form-control" id = "senhaRepetida" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}">
-                                        </div>
-                
-                                    </div>
+                                
 
                             <button class="btn btn-lg btn-info btn-block text-uppercase mt-3"
                             (click)="enviar();">Alterar</button>

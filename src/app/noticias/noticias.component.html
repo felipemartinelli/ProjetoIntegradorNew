@@ -1,155 +1,154 @@
 <!-- NAVBAR -->
+<div class="row">
+  <div class="col-md-7">
+    <nav class="navbar navbar-expand-lg navbar-transparent ">
 
-<div class="col-md-7">
-  <nav class="navbar navbar-expand-lg navbar-transparent ">
+      <a [routerLink]="'/home'" class="titulo"><strong>
+          <img src="/assets/images/logonew.png" id="logo">
+        </strong></a>
+      <a class="navbar-brand" href="#"></a>
 
-    <a [routerLink]="'/home'" class="titulo"><strong>
-        <img src="/assets/images/logonew.png" id="logo">
-      </strong></a>
-    <a class="navbar-brand" href="#"></a>
+    </nav>
+  </div>
 
-    <div class="dropdown">
-      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Cadastre-se
-      </button>
+  <!-- CARD PERFIL -->
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" data-toggle="modal" data-target="#modalCadastro">Candidato</a>
-        <a class="dropdown-item" data-toggle="modal" data-target="#modalCadastroEmpresa">Empresa</a>
+  <div class="container-fluid gedf-wrapper">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card-body">
+          <div class="col-md-12">
+            <img src="../../assets//images/perfiluser.png" class="imagemPerfil" alt="">
+          </div>
+          <div class="h5 mt-4">{{ usuario.nome }}</div>
+          <h5>Desenvolvedor Java Jr Full Stack</h5>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+            <a class="nav-link" [routerLink]="'/perfilpessoafisica'">Perfil</a>
+            <span class="badge badge badge-pill"></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+            <a class="nav-link" [routerLink]="'/feed'">Feed</a>
+            <span class="badge badge badge-pill" id="badge">6</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+            <a class="nav-link" (click)="logout();"> Sair </a>
+            <span class="badge badge badge-pill"></span>
+          </li>
+        </ul>
       </div>
-    </div>
 
-    <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-dark">Entrar</button>
 
-  </nav>
-</div>
+      <!-- CARDS COM NOTICIAS -->
 
-<div class="row" id="titulo">
-    <div class="col-md-12">
-      <h1>Boletim Diário</h1>
-      <h4>sábado, 12 de fevereiro</h4>
-      <p>Olá, confira as noticias de hoje</p>
-    </div>
-</div>
 
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia1.jpg" class="card-img" alt="surdos conversando em LIBRAS">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Afinal, os surdos são mudos?</h5>
-        <p class="card-text">Diferente do que se ouve por aí, não devemos utilizar o termo surdomudo, 
-          nem apenas mudo ou mudinho. As pessoas surdas podem falar, mas precisam de conhecimento da
-          língua portuguesa e de certa percepção auditiva para reproduzir a
-          fala. Com a ajuda de fonoaudiólogos, o surdo pode vir a desenvolver
-          a oralidade. Ademais, a perda auditiva pode ocorrer após a pessoa ter
-          sua oralidade já desenvolvida. </p>
-        <p class="card-text"><small class="text-muted">Última atualização há 3 minutos</small></p>
+      <div class="col-md-8" id="titulo">
+        <div class="row">
+          <div class="jumbotron">
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../assets/images/noticia1.jpg" class="card-img" alt="surdos conversando em LIBRAS">
+                </div>
+                <div class="col-md-8 m-0 p-0">
+                  <div class="card-body">
+                    <h5 class="card-title">Afinal, os surdos são mudos?</h5>
+                    <p class="card-text">Diferente do que se ouve por aí, não devemos utilizar o termo surdomudo,
+                      nem apenas mudo ou mudinho. </p>
+                    <a
+                      href=" https://www.defensoria.sp.def.br/dpesp/repositorio/40/guia%20sobre%20os%20direitos%20das%20pessoas%20com%20defici%c3%aancia.pdf ">Saiba
+                      mais ...</a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3 m-0 p-0">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../assets/images/noticia2.jpg" class="card-img" alt="cego com cão guia">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Mobilidade</h5>
+                    <p class="card-text"> Uma das leis mais importantes para o cego e que ainda
+                      carece de divulgação é a Lei 11.126, de 27 de junho de 2005, que lhe
+                      assegura o direito a entrar e permanecer com cão-guia em locais de
+                      uso coletivo.
+                    </p>
+                    <a
+                      href=" https://www.defensoria.sp.def.br/dpesp/repositorio/40/guia%20sobre%20os%20direitos%20das%20pessoas%20com%20defici%c3%aancia.pdf   ">Saiba
+                      mais ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3 m-0 p-0">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../assets/images/noticia3.jpg" class="card-img" alt="Benefício de Prestação Continuada">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Seguridade social</h5>
+                    <p class="card-text">O BPC – Benefício de Prestação Continuada: é a garantia de um salário mínimo
+                      por
+                      mês
+                      à pessoa com deficiência, de qualquer idade, com incapacidade para a vida independente
+                      e para o trabalho. </p>
+                    <a
+                      href=" https://www.defensoria.sp.def.br/dpesp/repositorio/40/guia%20sobre%20os%20direitos%20das%20pessoas%20com%20defici%c3%aancia.pdf   ">Saiba
+                      mais ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card mb-3 m-0 p-0">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../assets/images/noticia4.jpg" class="card-img" alt="Direito ao Trabalho">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Direito ao trabalho</h5>
+                    <p class="card-text"> A pessoa com deficiência pode trabalhar, sem qualquer distinção, desde que
+                      tenha habilidade e qualificação profissional exigida para a função a ser exercida. </p>
+                    <a
+                      href=" https://www.defensoria.sp.def.br/dpesp/repositorio/40/guia%20sobre%20os%20direitos%20das%20pessoas%20com%20defici%c3%aancia.pdf   ">Saiba
+                      mais ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3 m-0 p-0">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../assets/images/noticia5.jpg" class="card-img" alt="Autista">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Autismo é deficiência?</h5>
+                    <p class="card-text">A Convenção Internacional sobre os Direitos das Pessoas com Deficiência já
+                      permitia
+                      reconhecer a pessoa com Transtorno do Espectro do Autismo como Pessoa com Deficiência e conferir a
+                      ela os
+                      mesmos direitos.</p>
+                    <a
+                      href=" https://www.defensoria.sp.def.br/dpesp/repositorio/40/guia%20sobre%20os%20direitos%20das%20pessoas%20com%20defici%c3%aancia.pdf   ">Saiba
+                      mais ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia2.jpg" class="card-img" alt="cego com cão guia">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Mobilidade</h5>
-        <p class="card-text"> Uma das leis mais importantes para o cego e que ainda
-          carece de divulgação é a Lei 11.126, de 27 de junho de 2005, que lhe
-          assegura o direito a entrar e permanecer com cão-guia em locais de
-          uso coletivo, incluindo veículos e estabelecimentos privados.</p>
-        <p>Lembre-se: impedir ou dificultar este direito das pessoas cegas constitui ato de discriminação, 
-          ensejando interdição e multa. Estabelecimentos de saúde são exceções, pois devem proteger áreas de isolamento,
-          centros cirúrgicos e demais espaços determinados pela Comissão de
-          Controle de Infecção Hospitalar dos serviços de saúde. .</p>
-        <p class="card-text"><small class="text-muted">Última atualização há 6 minutos</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia3.jpg" class="card-img" alt="Benefício de Prestação Continuada">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Seguridade social</h5>
-        <p class="card-text">O BPC – Benefício de Prestação Continuada: é a garantia de um salário mínimo por mês
-           à pessoa com deficiência, de qualquer idade, com incapacidade para a vida independente 
-           e para o trabalho. Tal benefício independente de contribuição à seguridade social, mas deve
-          ser comprovada a impossibilidade do beneficiário ou sua família proverem a própria manutenção. 
-          Para solicitá-la, deve-se procurar uma agência do INSS.</p>
-        <p class="card-text"><small class="text-muted">Última atualização há 8 minutos</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia4.jpg" class="card-img" alt="Direito ao Trabalho">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Direito ao trabalho</h5>
-        <p class="card-text"> A pessoa com deficiência pode trabalhar, sem qualquer distinção, desde que tenha 
-          habilidade e qualificação profissional exigida para a função a ser exercida. A lei também prevê 
-          que as empresas com 100 (cem) ou mais empregados estão obrigadas a preencher de 2% a 5%
-          de seus cargos com pessoas com deficiência.</p>
-        <p class="card-text"><small class="text-muted">Última atualização há 9 minutos</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia5.jpg" class="card-img" alt="Autista">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Autismo é deficiência?</h5>
-        <p class="card-text">. A Convenção Internacional sobre os Direitos das Pessoas com Deficiência já permitia 
-          reconhecer a pessoa com Transtorno do Espectro do Autismo como Pessoa com Deficiência e conferir a ela os 
-          mesmos direitos, porém a Lei Federal 12.764 (conhecida como Lei Berenice Piana), publicada em 28
-          de dezembro de 2012, colocou fim a qualquer discussão e reconheceu que a pessoa com Transtorno do Espectro 
-          do Autismo é pessoa com deficiência para todos os efeitos legais e definiu diversas diretrizes para
-          criação de uma Política Nacional.</p>
-        <p class="card-text"><small class="text-muted">Última atualização há 14 minutos</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="../../assets/images/noticia6.jpg" class="card-img" alt="Lidar com pessoas com deficiência">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Como lidar com pessoas com deficiência?
-
-      </h5>
-        <p class="card-text"> Sempre que quiser ajudar, pergunte qual é a melhor maneira de proceder; não se ofenda se a oferta for recusada, pois nem sempre ela
-          é necessária. Bom senso e naturalidade são essenciais no relacionamento com as pessoas com deficiência.
-          Trate-as conforme sua idade; se for criança, trate-a como uma criança; se for adulto trate-a como um adulto.
-          .</p>
-        <p class="card-text"><small class="text-muted">Última atualização há 14 minutos</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-

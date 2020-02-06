@@ -6,12 +6,12 @@ import { InfoUsuario } from '../model/InfoUsuario';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-perfilpessoafisica',
-  templateUrl: './perfilpessoafisica.component.html',
-  styleUrls: ['./perfilpessoafisica.component.css']
+  selector: 'app-perfilpessoajuridica',
+  templateUrl: './perfilpessoajuridica.component.html',
+  styleUrls: ['./perfilpessoajuridica.component.css']
 })
-export class PerfilpessoafisicaComponent implements OnInit {
-
+export class PerfilpessoajuridicaComponent implements OnInit {
+  
   public infousuario: InfoUsuario;
 
   usuario: Usuario;

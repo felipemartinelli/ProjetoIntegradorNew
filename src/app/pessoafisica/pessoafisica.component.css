@@ -1,9 +1,3 @@
-#titulo{
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 45PX;
-
-}
 /* LOGO CLICKIN */
 
 #logo{
@@ -11,25 +5,28 @@
     padding-top: 15px;
     padding-left: 20px;
 }
+#nav{
+    background-color:#FFE1C9 ;
+}
 
-/* CARDS  */
-
-.card{
-    display: flex;
-    justify-content: right;
-    margin-top: 6%;
+.jumbotron{
+background-color: white;
+box-shadow: 5px 2px 5px 3px #FF8A24;
 }
 /* IMAGEM PERFIL */
 
-.imagemPerfil{
-  background-color: #aaa;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin-left: 17%;
-  margin-top: 8%;
-  overflow: hidden;
-  position: relative;
+#imagemPerfil{
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+    margin-left: 20%;
+}
+h5{
+    text-align: center;
+}
+.nav-link{
+cursor: pointer;
 }
 
 
@@ -40,12 +37,12 @@
  color: white;
 
 }
-
-/*FOOTER */
-#textorodape{
-    text-align: center;
+#corpo{
+    background: linear-gradient(to bottom, #ffe1c9 20%, #ff7700 113%);
+    
 }
 
-.nav-link{
-    cursor: pointer;
+/*FOOTER */
+#footer{
+    background-color: #FF8922;
 }

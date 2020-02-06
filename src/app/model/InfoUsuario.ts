@@ -10,7 +10,7 @@ export class InfoUsuario{
     public fotoDoPerfil: string;
     public infoAcademica: string;
     public infoProfissional: string;
-    public infoEmpresas: string;
+    public infoEmpresa: string;
     public infoVagas: string;
     public usuario: Usuario;
 

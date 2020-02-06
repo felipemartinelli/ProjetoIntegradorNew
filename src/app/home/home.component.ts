@@ -281,14 +281,12 @@ export class HomeComponent implements OnInit {
       this.usuario.senha = this.senhaLogin;
       this.router.navigate(['feed']);
       $('#btnfecharLogin').click();
-
       this.srv.recuperaLoginESenha(this.usuario).subscribe(
         (res:Usuario) =>{
           alert("E-mail e senha validados com sucesso!");
           Globals.user = res;
           this.router.navigate(['feed']);
           $('#btnfecharLogin').click();
-
         },
         err=>{
           alert("Usuário não cadastrado no sistema");
@@ -312,7 +310,7 @@ export class HomeComponent implements OnInit {
   public triggerScrollToEm() {
     
     const config: ScrollToConfigOptions = {
-      target: 'embaixadores'
+      target: 'logo'
     };
  
     this._scrollToService.scrollTo(config);

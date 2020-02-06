@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
 import { Usuario } from '../model/Usuario';
 import { UsuarioService } from '../service/usuario.service';
+import { Comentario } from '../model/Comentario';
 
 @Component({
   selector: 'app-feed',
@@ -26,8 +27,10 @@ export class FeedComponent implements OnInit {
   private vetorOunao: boolean = true;
   private textPost: string;
   private textPostModel: string;
+  private textComentario: string;
   private palavraPesquisada: string;
   public post: Post = new Post();
+  public comentario: Comentario = new Comentario();
   private i: number = 1;
   public idModal: number = 0;
 
@@ -48,6 +51,7 @@ export class FeedComponent implements OnInit {
                 this.usuario = new Usuario();
                 this.usuario.nome = res.nome;
                 this.usuario.idUsuario = res.idUsuario;
+                this.usuario.nomeFantasia = res.nomeFantasia;
                 this.acharTodos();
           },   
         err => {
@@ -55,9 +59,9 @@ export class FeedComponent implements OnInit {
           alert("Erro ao inserir");
         });
       
-    }else{
-      alert("Você Precisa estar conectado para acessar essa página!")
+    }else{     
       this.router.navigate(['/home']);
+      alert("Você Precisa estar conectado para acessar essa página!")
       console.log(localStorage.getItem);
     }
   }
@@ -65,6 +69,41 @@ export class FeedComponent implements OnInit {
   acharTodos() {
     this._posts = null;
     this.srv.recuperaPostsUsuario(this.usuario.idUsuario).subscribe((postOut: Usuario) => this.usuario = postOut);
+  }
+
+  enviarComentarios(id: number){
+
+    if(this.textComentario !=null || this.textComentario != ""){
+ 
+      this.comentario.texto = this.textComentario;
+      this.comentario.dataComentario = this.now.toLocaleDateString();
+      this.comentario.imagem = null;
+      this.post.idPostagem = id;
+      this.comentario.post = this.post;
+
+      console.log(id);
+      console.log(this.post.idPostagem);
+
+      console.log(this.comentario);
+
+      this.postService.insereComentario(this.comentario).subscribe(
+        res => {
+          alert("inserido com sucesso!")
+          
+        },
+        err => {
+          console.log(err);
+          alert("Erro ao inserir");
+        }
+      
+        )
+      
+
+    }
+    else {
+      alert("Não é possivel incluir um comentario em branco");
+    }
+
   }
 
   enviarDados() {
@@ -157,6 +196,21 @@ export class FeedComponent implements OnInit {
     });
   }
 
+  private selecionarPerfil(){
+
+    this.srv.recuperaUsuario(this.usuario.idUsuario).subscribe((usuario: Usuario) => this.usuario = usuario);
+
+    console.log(this.usuario.tipo);
+
+    if(this.usuario.tipo == "PF"){
+      this.router.navigate(['/perfilpessoafisica']);
+    }
+    else{
+      this.router.navigate(['/perfilpessoajuridica']);
+    }
+
+  }
+
   private logout(){
   if(localStorage.getItem("MyToken")){
     localStorage.removeItem("MyToken");
@@ -166,4 +220,11 @@ export class FeedComponent implements OnInit {
   }
 }
 
+  private mostra(){
+      $('.hidden').css("display","block");
+  };
+
+  private esconde(){
+    $('.hidden').css("display","none");
+};
 }

@@ -114,6 +114,7 @@ export class PessoafisicaComponent implements OnInit {
       (res:Usuario)=>{
         this.usuario = res;
         this.usuario.telefone = res.telefone;
+        console.log(this.usuario);
       },
       err=>{
         
@@ -145,6 +146,15 @@ export class PessoafisicaComponent implements OnInit {
         alert("Erro ao inserir");
       }
     )
+  }
+
+  private logout(){
+    if(localStorage.getItem("MyToken")){
+      localStorage.removeItem("MyToken");
+      window.location.reload();
+    }else{
+    this.router.navigate(['/home']);
+    }
   }
 
 

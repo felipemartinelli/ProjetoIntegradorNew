@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../model/Post';
+import { Comentario } from '../model/Comentario';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,8 @@ export class PostService {
     return this.http.put("http://localhost:8080/post/alterar",posts);
   }
 
+  public insereComentario(comentario:Comentario){
+    return this.http.post("http://localhost:8080/comentario/novo",comentario);
+  }
 
 }

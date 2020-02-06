@@ -23,50 +23,69 @@ html {
 
 h1{
     color: black;
-    margin-top: 15%;
-    margin-left: 20%;
+    margin-top: 22%;
+    margin-left: 30%;
     font-size: 48px;
+}
 
+.display-3{
+    margin-left: 5%;
 }
 
 
 /* IMAGEM CADEIRANTE */
 
-.cadeirante{
+#cadeirante{
 
-    left: 850px;  
-    top: 180px; 
-    width: 220%;
-    right: 220%;
+    margin-top: 3%; 
+    width: 65%;
+    height: 95%;
 
 }
 
 /* IMAGEM QUEM SOMOS */
 
-#defhome{
-    width: 450px;
-    height: 250px;
-    margin-top: 35%;
+#deficientesfoto{
+ 
+    height: 70%;
+    width: 80%;
+    margin-top: 13%;
+
 }
-
-/* LINKS QUEMSOMOS-CONTATO-EMBAIXADORES-FAQS */
-
-#navbaixo{
-
-    border: transparent;
-    margin-left: 16%;
-    text-decoration: none;
-    color: rgb(136, 136, 136);
-} 
 
 .nav-link{
     color: rgb(138, 138, 138);
 }
+
+/* PARRALAX */
+
+.parallax {
+
+    background-image: url("../../assets/images/quebracabeça.jpeg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.parallaxdois {
+
+    background-image: url("../../assets/images/quebracabeça1.jpeg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
 /* CARROUSEL */
 
 #carouselExampleIndicators{
     text-align: center;
-    
+    margin-bottom: 7%;
 }
 
 
@@ -87,6 +106,7 @@ h1{
 h3{
     text-align: center;
     margin-top: 7%;
+    
 }
 
 
@@ -105,16 +125,10 @@ p{
     margin-left: 6%;
     margin-right: 6%;
     line-height: 25px;
-
+    margin-bottom: 8%;
 }
 
-/* FOOTER */
 
-#textorodape {
-    display: flex;
-    justify-content: center ;
-
-}
 
 /*DROPDOW*/
 
@@ -134,13 +148,8 @@ p{
     height: 320px;
     width: 530px;
     text-align: center;
-    margin-top: 28%;
+    margin-top: 23%;
 }
-
-#jumb{
-    background: linear-gradient(to bottom, #ffffff 0%, #ff9933 100%);
-}
-
 
 /* TEXTO  */
 
@@ -148,14 +157,18 @@ p{
     margin-top: 18%;
     margin-block-end: 9%;
 }
-/* 
-#embaixadores{
-   margin-top: %;
-}*/
-
 
 .arrowicon{
-    margin-left: 50%;
+    margin-left: 47%;
+}
+
+h2{
+    margin-left: 6%;
+}
+
+.dropdown-item{
+    background-color: rgb(255, 255, 255) ;
+    cursor: pointer;
 }
 
 #spanPadrao{
@@ -169,4 +182,14 @@ p{
 
 #spanSenhaFraca{
     color: blue;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
 }

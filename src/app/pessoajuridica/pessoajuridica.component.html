@@ -1,141 +1,109 @@
 <!-- NAVBAR -->
-
-<div class="col-md-7">
-        <nav class="navbar navbar-expand-lg navbar-transparent ">
-    
-            <a [routerLink]="'/home'" class="titulo"><strong>
+<div class="row" id="nav">
+        <nav class="navbar navbar-expand-lg navbar-transparent">
+            <a [routerLink]="'/home'"><strong>
                     <img src="/assets/images/logonew.png" id="logo">
                 </strong></a>
             <a class="navbar-brand" href="#"></a>
-    
         </nav>
     </div>
     <!-- CARD PERFIL -->
     
-    <div class="container-fluid gedf-wrapper">
-        <div class="row">
+        <div class="row" id="corpo">
             <div class="col-md-3">
-    
-                <div class="card-body">
-                    <div class="col-md-12">
-                        <img src="../../assets//images/waves com coqueiro.png" class="imagemPerfil" alt="">
-                    </div>
+                <div class="jumbotron  mt-3 ">
+                    <img src="/assets/images/logogen.png" id="imagemPerfil" alt="imagem do perfil da empresa">
                     <div class="h5 mt-4">{{ usuario.nome }}</div>
-                    <h5>Desenvolvedor Java Jr Full Stack</h5>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                    <div class="h5 mt-4">{{ usuario.nomeFantasia }}</div>
+    
+                    <ul class="list-group mt-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
                             <a class="nav-link" [routerLink]="'/feed'">Feed</a>
-                        <span class="badge badge badge-pill"></span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                        Mensagens
-                        <span class="badge badge badge-pill" id="badge">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                        Notificações
-                        <span class="badge badge badge-pill" id="badge">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                        Configurações
-                        <span class="badge badge badge-pill"></span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
-                        Sair
-                        <span class="badge badge badge-pill"></span>
-                    </li>
-                </ul>
+                            <span class="badge badge badge-pill"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                            <a class="nav-link" [routerLink]="'/noticias'">Notícias</a>
+                            <span class="badge badge badge-pill" id="badge">6</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center h6 text-muted">
+                            <a class="nav-link" (click)="logout();">Sair</a>
+                            <span class="badge badge badge-pill"></span>
+                        </li>
+                    </ul>
+                </div>
             </div>
     
+            <!-- TABELA DE EDIÇÃO -->
             <div class="col-md-9">
-    
-                <!-- TABELA DE EDIÇÃO -->
-                <div class="jumbotron">
-                    <h5 class="display-4" id="titulo">Perfil profissional do candidato</h5>
+                <div class="jumbotron mt-3" >
+                    <h5 class="display-4" id="titulo">Perfil Empresa</h5>
                     <form>
-                        <div class="form-row">
+                        <div class="form-row mt-5">
+                            
                             <div class="form-group col-md-6">
-                                <label for="inserirnome">Nome</label>
-                                <input type="text" class="form-control" id="inserir nome"
-                                    placeholder="Como você gostaria do seu nome no perfil">
+                                <label for="inserirnomefantasia">Nome Fantasia</label>
+                                <input type="text" class="form-control" placeholder="Editar seu nome fantasia" [(ngModel)]="nomeFantasia" [ngModelOptions]="{standalone: true}" id="nomeFantasia" value= {{usuario.nomeFantasia}}>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inserirsobrenome">Sobrenome</label>
-                                <input type="text" class="form-control" id="inserirSobrenome"
-                                    placeholder="Insira seu sobrenome">
+                                <label for="inserirRazaoSocial">Razão Social</label>
+                                <input type="text" class="form-control" placeholder="Editar sua razão social" id="razaoSocial" [(ngModel)]="razaoSocial" [ngModelOptions]="{standalone: true}" value= {{usuario.razaoSocial}}>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inserirInfoAcademica">Formação acadêmica</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inserirInfoProfissional">Formação profissional</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-    
-                        </div>
-    
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inserirendereco">Endereço</label>
-                                <input type="text" class="form-control" id="inserirEndereço"
-                                    placeholder="Insira seu endereço para buscar as vagas por perto">
+                                <input type="text" class="form-control" id="endereco"
+                                    placeholder="Editar seu endereço" [(ngModel)]="endereco" [ngModelOptions]="{standalone: true}" value= {{infousuario.endereco}}>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEstado">Estado</label>
-                                <select id="inputEstado" class="form-control">
-                                    <option selected>Selecionar</option>
-                                    <option>AC</option>
-                                    <option>AL</option>
-                                    <option>AP</option>
-                                    <option>AM</option>
-                                    <option>BA</option>
-                                    <option>CE</option>
-                                    <option>DF</option>
-                                    <option>ES</option>
-                                    <option>GO</option>
-                                    <option>MA</option>
-                                    <option>MS</option>
-                                    <option>MG</option>
-                                    <option>PA</option>
-                                    <option>PB</option>
-                                    <option>PR</option>
-                                    <option>PE</option>
-                                    <option>PI</option>
-                                    <option>RJ</option>
-                                    <option>RN</option>
-                                    <option>RS</option>
-                                    <option>RO</option>
-                                    <option>RR</option>
-                                    <option>SC</option>
-                                    <option>SP</option>
-                                    <option>SE</option>
-                                    <option>TO</option>
-                                </select>
+                                <label for="InserirSetor">Setor</label>
+                                    <input type="text" class="form-control" id="setor"
+                                     placeholder="Editar setor" [(ngModel)]="setor" [ngModelOptions]="{standalone: true}" value= {{infousuario.setor}}>
                             </div>
-    
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inserirTelefone">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" placeholder="Insira seu stelefone para contato" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" value= {{usuario.telefone}}>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inserircnpj">CNPJ</label>
+                                <input type="text" class="form-control" placeholder="Edite o número do seu CNPJ" [(ngModel)]="cnpj" [ngModelOptions]="{standalone: true}" id="cnpj" value= {{usuario.cnpj}}>
+                            </div>
                         </div>
                         <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inserirSetor">Setor</label>
-                                    <input type="text" class="form-control"                                    placeholder="Insira seu setor de atuação">
+                                    <label for="inserirInfoEmpresa">Informações sobre a empresa</label>
+                                    <textarea class="form-control" rows="3" [(ngModel)]="infoEmpresa" [ngModelOptions]="{standalone: true}" id="infoEmpresa"
+                                        placeholder="Editar informações sobre sua empresa" value= {{infousuario.infoEmpresa}}></textarea>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inserirsobrenome">Cargo</label>
-                                    <input type="text" class="form-control" placeholder="Insira seu cargo atual. EX: autonomo, farmacêutico etc..">
+                                    <label for="inserirInfoProfissional">Vagas</label>
+                                    <textarea class="form-control" id="infoVagas" rows="3" [(ngModel)]="infoVagas" [ngModelOptions]="{standalone: true}"
+                                        placeholder="Editar informações sobre suas vagas disponíveis" value= {{infousuario.infoVagas}}></textarea>
                                 </div>
+        
                             </div>
+
+                            <button class="btn btn-lg btn-info btn-block text-uppercase mt-3"
+                            (click)="enviar();">Alterar</button>
+        
                     </form>
                 </div>
             </div>
-            <!-- FOOTER -->
-    
-            <div class="col">
-                <hr>
-                <div id="textorodape">
-                    <strong>ClickIn&reg;</strong> 2020
-                </div>
-            </div>
-
+            
+        </div>
+        
+    <!-- FOOTER -->
+      
+    <div class="row" id="footer">
+      <div class="col-md-12 d-flex justify-content-center">
+          <strong>ClickIn&reg;</strong>2020
+      </div>
+    </div>
+    <div class="row" id="footer">
+      <div class="col-md-12 d-flex justify-content-center mb-3">
+          <a class="nav-link mr-1 m-0 p-0" [routerLink]="'/contato'">Contato</a><strong>|</strong>
+          <a class="nav-link ml-1 m-0 p-0" [routerLink]="'/faq'">Ajuda</a>
+      </div>
+    </div>
